@@ -64,6 +64,47 @@ export const AboutVaidyam: React.FC<AboutVaidyamProps> = ({
         </div>
       </div>
 
+      {/* Brand Identity & Sacred Emblem Section */}
+      <div className="p-8 sm:p-12 rounded-3xl bg-[#F8F6EF] border border-[#164A3A]/15 shadow-sm space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className="md:col-span-5 flex justify-center">
+            <div className="bg-[#F8F6EF] p-4 rounded-3xl shadow-sm border border-[#164A3A]/10 max-w-xs w-full text-center">
+              <img
+                src="/src/assets/images/vaidhyam_brand_logo_1791379543112.jpg"
+                alt="VAIDHYAM — Ancient Wisdom. Personal Healing."
+                className="w-full h-auto rounded-2xl mx-auto"
+              />
+            </div>
+          </div>
+
+          <div className="md:col-span-7 space-y-4">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#C7A45A]">
+              Brand Identity & Symbology
+            </span>
+            <h2 className="font-serif text-3xl font-bold text-[#164A3A]">
+              The Sacred Geometry of VAIDHYAM
+            </h2>
+            <p className="text-xs sm:text-sm text-[#202522]/80 leading-relaxed font-light">
+              Our emblem is centered on an elegant symmetrical <strong>“V”</strong> sculpted from deep forest-green medicinal leaf contours, encasing a human-healing silhouette of upward-reaching arms that evoke young Ayurvedic healing flora.
+            </p>
+            <div className="space-y-2.5 text-xs text-[#202522]/80">
+              <div className="flex items-start gap-2.5">
+                <div className="w-2 h-2 rounded-full bg-[#C7A45A] mt-1.5 flex-shrink-0" />
+                <span><strong>The Gold Orb:</strong> Represents Prana (life-force consciousness), healing vital energy, and celestial balance.</span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <div className="w-2 h-2 rounded-full bg-[#164A3A] mt-1.5 flex-shrink-0" />
+                <span><strong>The Mortar Vessel:</strong> The classical herbal bowl anchored with a thin muted-gold rim, embodying centuries of apothecary wisdom.</span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <div className="w-2 h-2 rounded-full bg-[#6F963F] mt-1.5 flex-shrink-0" />
+                <span><strong>The Rising Stem:</strong> A slender gold-and-green axis uniting clinical medicine with personal regenerative healing.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Narrative Section */}
       <div className="p-8 sm:p-12 rounded-3xl bg-[#FAF8F5] border border-[#143D27]/10 space-y-6">
         <h2 className="font-serif text-3xl font-bold text-[#0C281B]">
