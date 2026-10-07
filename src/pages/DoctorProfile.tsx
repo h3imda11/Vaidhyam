@@ -62,78 +62,44 @@ export const DoctorProfile: React.FC<DoctorProfileProps> = ({
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16 pb-24 text-left">
       {/* Top Banner Card */}
       <div className="bg-white rounded-3xl border border-[#143D27]/10 shadow-sm overflow-hidden p-8 sm:p-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Photograph */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-[#FAF8F5]">
-              <img
-                src={doctor.photoUrl || '/src/assets/images/vaidyam_doctor_consult_1791354460579.jpg'}
-                alt={doctor.name}
-                className="w-full h-[420px] object-cover"
-              />
-              <div className="absolute top-4 right-4 bg-[#0C281B]/90 backdrop-blur-md px-3 py-1 rounded-xl text-white text-xs font-semibold">
-                Kerala Certified
-              </div>
-            </div>
+        <div className="max-w-3xl space-y-5">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#2C6E49]/10 text-[#2C6E49] text-xs font-bold uppercase tracking-wider">
+            <ShieldCheck className="w-4 h-4" />
+            <span>Ayurvedic Clinical Care & Medical Direction</span>
           </div>
 
-          {/* Profile Details */}
-          <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#2C6E49]/10 text-[#2C6E49] text-xs font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Senior Ayurvedic Physician & Clinical Director</span>
-            </div>
-
-            <div>
-              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#0C281B]">
-                {doctor.name}
-              </h1>
-              <p className="text-sm font-semibold text-[#2C6E49] mt-1.5">
-                {doctor.qualification}
-              </p>
-              <p className="text-xs text-[#143D27]/60 mt-0.5">
-                Registration: {doctor.registrationNumber} • Council of State Boards of Ayurvedic Medicine
-              </p>
-            </div>
-
-            <p className="text-sm sm:text-base text-[#143D27]/80 leading-relaxed font-light">
-              {doctor.bio}
+          <div>
+            <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#0C281B]">
+              Ayurvedic Medical Panel
+            </h1>
+            <p className="text-sm font-semibold text-[#2C6E49] mt-1.5">
+              Qualified BAMS / MD (Ayurveda) Physicians
             </p>
+          </div>
 
-            {/* Quick Metrics */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs">
-              <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#143D27]/10 space-y-0.5">
-                <span className="text-[#143D27]/60 text-[10px] uppercase font-bold">Clinical Experience</span>
-                <strong className="text-[#0C281B] text-base block font-serif">
-                  {doctor.experienceYears}+ Years
-                </strong>
-              </div>
+          <p className="text-sm sm:text-base text-[#143D27]/80 leading-relaxed font-light">
+            Our clinical team comprises university-qualified Ayurvedic doctors with specialized training
+            in classical postpartum care (Sutika Paricharya), Panchakarma therapy, and maternal health.
+            Detailed individual physician profiles and verified registrations are currently being updated
+            and will be published shortly.
+          </p>
 
-              <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#143D27]/10 space-y-0.5">
-                <span className="text-[#143D27]/60 text-[10px] uppercase font-bold">Languages</span>
-                <strong className="text-[#0C281B] text-sm block font-medium">
-                  {doctor.languages.join(', ')}
-                </strong>
-              </div>
+          <div className="p-4 bg-[#FAF8F5] rounded-2xl border border-[#143D27]/10 text-xs text-[#0C281B] space-y-1">
+            <strong>Online & In-Clinic Consultations Available:</strong>
+            <p className="text-[#143D27]/70">
+              You can schedule an individualized evaluation with our attending Ayurvedic doctor for pulse evaluation insights, health assessment, and customized diet/treatment planning.
+            </p>
+          </div>
 
-              <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#143D27]/10 space-y-0.5 col-span-2 sm:col-span-1">
-                <span className="text-[#143D27]/60 text-[10px] uppercase font-bold">Consultation Fee</span>
-                <strong className="text-[#0C281B] text-base block font-serif">
-                  ₹{doctor.consultationFee}
-                </strong>
-              </div>
-            </div>
-
-            {/* Consultation CTA */}
-            <div className="pt-3 flex flex-wrap items-center gap-3">
-              <button
-                onClick={onOpenBooking}
-                className="inline-flex items-center gap-2 bg-[#E06D53] hover:bg-[#C4573E] text-white px-7 py-3.5 rounded-xl font-semibold text-sm shadow transition-all"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book Consultation with Dr. Ananya</span>
-              </button>
-            </div>
+          {/* Consultation CTA */}
+          <div className="pt-2 flex flex-wrap items-center gap-3">
+            <button
+              onClick={onOpenBooking}
+              className="inline-flex items-center gap-2 bg-[#E06D53] hover:bg-[#C4573E] text-white px-7 py-3.5 rounded-xl font-semibold text-sm shadow transition-all"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Book Doctor Consultation</span>
+            </button>
           </div>
         </div>
       </div>
@@ -144,17 +110,17 @@ export const DoctorProfile: React.FC<DoctorProfileProps> = ({
           <Award className="w-8 h-8 text-[#2C6E49]" />
           <h3 className="font-serif text-xl font-bold text-[#0C281B]">Authentic Lineage</h3>
           <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-            Formally trained in Kerala's classical Ashtanga Hridaya tradition, Dr. Ananya integrates
-            timeless Ayurvedic diagnostics without modern hyperbole or unsubstantiated claims.
+            Formally trained in classical Ashtanga Hridaya tradition, integrating timeless Ayurvedic
+            diagnostics without modern hyperbole or unsubstantiated claims.
           </p>
         </div>
 
         <div className="p-6 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm space-y-3">
           <HeartPulse className="w-8 h-8 text-[#E06D53]" />
-          <h3 className="font-serif text-xl font-bold text-[#0C281B]">Prasava Raksha Specialist</h3>
+          <h3 className="font-serif text-xl font-bold text-[#0C281B]">Prasava Raksha Protocol</h3>
           <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-            Having supervised post-delivery care for over 1,200 new mothers across Kerala and India,
-            she understands both normal delivery and Caesarean section recovery nuances.
+            Specialized post-delivery care frameworks accommodating both normal delivery and Caesarean
+            section recovery trajectories with tailored therapy sequencing.
           </p>
         </div>
 
@@ -162,8 +128,8 @@ export const DoctorProfile: React.FC<DoctorProfileProps> = ({
           <Clock className="w-8 h-8 text-[#2C6E49]" />
           <h3 className="font-serif text-xl font-bold text-[#0C281B]">Dedicated Attention</h3>
           <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-            Every patient consultation is allotted a dedicated 30 to 45 minutes to listen attentively,
-            examine maternal markers, and co-create an achievable recovery plan.
+            Every patient consultation is allotted dedicated time to listen attentively, examine maternal
+            markers, and co-create an achievable recovery plan.
           </p>
         </div>
       </div>
@@ -203,8 +169,7 @@ export const DoctorProfile: React.FC<DoctorProfileProps> = ({
             Monday through Saturday • 9:00 AM to 5:00 PM IST
           </h3>
           <p className="text-xs text-white/70 max-w-lg font-light">
-            Consultations available via Video Telehealth or in-person at Vaidyam Sanctuary,
-            Sasthamangalam, Thiruvananthapuram.
+            Consultations available via Online Video Telehealth, Audio Call, or Clinic appointments.
           </p>
         </div>
 
@@ -213,7 +178,7 @@ export const DoctorProfile: React.FC<DoctorProfileProps> = ({
           className="inline-flex items-center gap-2 bg-[#E06D53] hover:bg-[#C4573E] text-white px-7 py-3.5 rounded-xl font-semibold text-sm shadow transition-all flex-shrink-0"
         >
           <Calendar className="w-4 h-4" />
-          <span>Book with Dr. Ananya</span>
+          <span>Book Consultation</span>
         </button>
       </div>
     </div>

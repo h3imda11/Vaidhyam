@@ -1,17 +1,17 @@
-import { Doctor, PdcPackage, Treatment, AvailabilityConfig, ClinicSettings } from '../types';
+import { Doctor, PdcPackage, Treatment, AvailabilityConfig, ClinicSettings, KnowledgeArticle } from '../types';
 
 export const SEED_DOCTOR: Doctor = {
   id: 'doc_dr_ananya',
-  name: 'Dr. Ananya Warrier, BAMS, MD (Ayu)',
-  qualification: 'BAMS (Govt Ayurveda College, Trivandrum), MD in Prasuti Tantra & Stree Roga',
+  name: 'Ayurvedic Physician',
+  qualification: 'BAMS, MD (Ayu)',
   specialization: 'Post-Delivery Care (Sutika Paricharya) & Classical Panchakarma',
-  bio: 'Dr. Ananya Warrier has over 14 years of clinical experience in authentic Kerala Ayurveda. Having guided more than 1,200 new mothers through postnatal recovery, she combines classical Astanga Hridaya tenets with gentle, compassionate clinical care tailored for modern lifestyles.',
-  experienceYears: 14,
+  bio: 'Our panel of licensed Ayurvedic doctors provides personalized consultations rooted in classical principles and tailored to your individual health constitution.',
+  experienceYears: 12,
   languages: ['English', 'Malayalam', 'Hindi'],
   consultationFee: 850,
-  photoUrl: '/src/assets/images/vaidyam_doctor_consult_1791354460579.jpg',
+  photoUrl: '',
   consultationTypes: ['video', 'audio', 'in_clinic'],
-  registrationNumber: 'TRA-AYU-84920',
+  registrationNumber: '',
   active: true,
 };
 
@@ -273,14 +273,211 @@ export const SEED_SETTINGS: ClinicSettings = {
   id: 'general',
   businessName: 'VAIDHYAM',
   tagline: 'Ancient Wisdom. Personal Healing.',
-  phone: '+91 94470 12890',
-  whatsapp: '+91 94470 12890',
-  email: 'care@vaidhyamayurveda.com',
-  address: 'Vaidhyam Sanctuary, Sasthamangalam, Thiruvananthapuram, Kerala 695010, India',
+  phone: '',
+  whatsapp: '',
+  email: '',
+  address: '',
   consultationFee: 850,
   currency: '₹',
-  workingHoursText: 'Monday to Saturday: 9:00 AM – 5:00 PM (IST)',
+  workingHoursText: 'Monday to Saturday: 9:00 AM – 5:00 PM',
   cancellationNoticeHours: 24,
   razorpayKeyId: 'rzp_test_vaidhyam_demo',
   allowPayAtClinic: true,
 };
+
+export const SEED_KNOWLEDGE_ARTICLES: KnowledgeArticle[] = [
+  {
+    id: 'art_sutika_golden_window',
+    slug: '42-day-postpartum-golden-window-ayurveda',
+    title: 'The 42-Day Golden Window: Why Sutika Paricharya Shapes Lifelong Maternal Health',
+    summary: 'Classical Astanga Hridaya wisdom on how the first 6 weeks following childbirth establish a mother’s vitality, bone strength, and hormonal balance for decades.',
+    content: [
+      'In classical Ayurvedic medicine, childbirth is not merely a biological endpoint—it is viewed as a complete physiological rebirth of the mother. During labor, the dramatic physical separation of the baby and placenta creates an instantaneous internal void within the abdomen, causing an immediate, acute aggravation of Vata dosha.',
+      'According to Astanga Hridaya (Sharira Sthana), if this provoked Vata is left unchecked, it manifests as chronic joint pain, fatigue, digestive weakness, metabolic slowdown, and postpartum hormonal volatility.',
+      'Sutika Paricharya—the classical 42-day post-delivery regimen—is designed as an intensive restorative protocol. By systematically pacifying Vata through warm medicated oils, herbal decoctions, and nutrient-dense foods, the mother’s seven bodily tissues (Sapta Dhatus) are systematically reconstructed.',
+      'Clinical observation shows that mothers who undertake disciplined postpartum care experience significantly faster uterine involution, lower rates of pelvic floor laxity, enhanced lactation volume, and deeper emotional equilibrium.'
+    ],
+    keyTips: [
+      'Avoid cold beverages and raw salads completely during the first 21 days; consume only warm, freshly prepared broths and medicated waters.',
+      'Perform gentle abdominal wrapping (Udaraveshtana) using clean, unbleached cotton to support abdominal wall retraction.',
+      'Ensure complete physical rest during the first two weeks—rest is medicine in Ayurvedic obstetrics.'
+    ],
+    category: 'Postnatal Care',
+    dosha: 'Vata',
+    readingTimeMinutes: 4,
+    author: 'Vaidyam Clinical Panel',
+    authorTitle: 'Senior Ayurvedic Physicians',
+    classicalReference: 'Astanga Hridaya, Sharira Sthana, Chapter 3 (Garbha Sharira)',
+    tags: ['Postnatal Care', 'Sutika Paricharya', 'Vata Pacification', 'Prasava Raksha Kerala'],
+    recommendedHerbOrOil: 'Dhanwantharam Kuzhambu & Sowbhagya Shunti Lehyam',
+    helpfulCount: 142,
+    featured: true,
+    publishedAt: '2026-09-15',
+  },
+  {
+    id: 'art_postnatal_abhyanga_benefits',
+    slug: 'postnatal-abhyanga-warm-oil-therapy-benefits',
+    title: 'Postnatal Abhyanga: Why Warm Medicated Oil Therapy is Essential for New Mothers',
+    summary: 'Discover how daily therapeutic oil application relieves spinal strain, stimulates lymphatic drainage, and calms postpartum nervous exhaustion.',
+    content: [
+      'Abhyanga is not a superficial spa massage; it is an ancient Ayurvedic medical therapy rooted in marma vital point stimulation and transdermal herbal assimilation.',
+      'Carrying a baby for nine months shifts the center of gravity, exerting enormous mechanical stress on the lumbar spine and pelvis. Following labor, prolonged nursing postures and sleep deprivation further strain the trapezius and rhomboid muscles.',
+      'Medicated oils such as Dhanwantharam Kuzhambu and Ksheerabala Tailam are cooked with up to 40 restorative botanical roots, including Bala (Sida cordifolia), Ashwagandha, and Dasamoola. As warm oil is massaged in long, rhythmic strokes along the lymph channels, it lubricates dry, agitated nerve endings and promotes deep endorphin release.',
+      'The heat and gentle pressure also enhance oxytocin secretion, which directly facilitates smooth lactation while accelerating safe uterine involution.'
+    ],
+    keyTips: [
+      'For normal delivery, commence external gentle massage after Day 7 once acute lochial discharge stabilizes.',
+      'For Caesarean sections, wait 14 to 21 days until scar closure is medically verified by your doctor before full-body therapies.',
+      'Always follow Abhyanga with a warm herbal decoction bath (Snana) to open the pores and seal the therapeutic properties.'
+    ],
+    category: 'Postnatal Care',
+    dosha: 'Vata',
+    readingTimeMinutes: 3,
+    author: 'Vaidyam Clinical Panel',
+    authorTitle: 'Senior Ayurvedic Physicians',
+    classicalReference: 'Charaka Samhita, Sutrasthana, Chapter 5',
+    tags: ['Abhyanga', 'Ayurvedic Massage', 'Postpartum Recovery', 'Herbal Tailams'],
+    recommendedHerbOrOil: 'Ksheerabala Tailam & Bala Ashwagandhadhi Kuzhambu',
+    helpfulCount: 98,
+    featured: true,
+    publishedAt: '2026-09-20',
+  },
+  {
+    id: 'art_jatharagni_digestive_fire',
+    slug: 'rekindling-jatharagni-digestive-fire-ayurveda',
+    title: 'Jatharagni: Rekindling Your Metabolic Fire for Immunity and Vitality',
+    summary: 'In Ayurveda, healthy digestion is the fountainhead of immunity (Ojas). Learn clinical methods to eliminate bloating and restore gut harmony.',
+    content: [
+      'Ayurveda asserts that disease begins when Jatharagni—the central digestive and metabolic fire—becomes weak, irregular, or overpowered. When food is not properly metabolized, it turns into Ama, a toxic, unassimilated residue that clogs subtle bodily channels (Srotas).',
+      'Symptoms of sluggish Agni include post-meal heaviness, brain fog, acid reflux, chronic bloating, and low stamina. Restoring Agni is particularly crucial for postpartum mothers, as the quality of maternal breast milk is a direct reflection of digestive assimilation.',
+      'Rather than suppressing symptoms with antacids, classical Ayurveda uses Deepana (appetite kindle) and Pachana (toxin digestion) spices like dry ginger, pippali (long pepper), cumin, and ajwain to gently ignite metabolic efficiency without irritating the stomach lining.'
+    ],
+    keyTips: [
+      'Drink a cup of warm water steeped with 1/2 tsp crushed cumin, 1/2 tsp coriander seeds, and 1/2 tsp fennel seeds (CCF Tea) between meals.',
+      'Never drink ice-cold water during meals; it dampens digestive enzymes like water thrown over a warm flame.',
+      'Leave at least 4 to 5 hours between meals to allow complete digestion of the previous meal.'
+    ],
+    category: 'Gut & Agni',
+    dosha: 'Tridoshic',
+    readingTimeMinutes: 4,
+    author: 'Vaidyam Clinical Panel',
+    authorTitle: 'Senior Ayurvedic Physicians',
+    classicalReference: 'Astanga Hridaya, Sutrasthana, Chapter 13 (Dosha Bhediya)',
+    tags: ['Digestive Fire', 'Agni', 'Gut Wellness', 'Ama Detox', 'CCF Tea'],
+    recommendedHerbOrOil: 'Shunti (Dry Ginger), Jeerakarishtam, Dadimashtaka Choornam',
+    helpfulCount: 115,
+    featured: false,
+    publishedAt: '2026-09-28',
+  },
+  {
+    id: 'art_shatavari_breastfeeding_lactation',
+    slug: 'shatavari-ayurvedic-superherb-lactation-hormones',
+    title: 'Shatavari: The Classical Queen of Herbs for Lactation and Hormonal Balance',
+    summary: 'How Asparagus racemosus naturally enhances breast milk production while cooling inflammatory heat and restoring maternal vitality.',
+    content: [
+      'Shatavari (Asparagus racemosus) translates literally as "she who possesses a hundred spouses," paying homage to its renowned reproductive rejuvenative properties in the female body.',
+      'From a pharmacological perspective, Shatavari contains steroidal saponins (shatavarins) that act as natural adaptogens and galactagogues. In postpartum mothers, it naturally supports prolactin secretion, enhancing both the quantity and nutritional density of breast milk.',
+      'Beyond lactation, Shatavari possesses a sweet (Madhura) and bitter (Tikta) taste with a cooling potency (Sheeta Virya). This uniquely pacifies aggravated Pitta and Vata, cooling postpartum night sweats, stabilizing emotional mood swings, and nourishing depleted mucosal membranes.'
+    ],
+    keyTips: [
+      'Traditionally consumed as Shatavari Gulam (herbal jam) or 1 teaspoon of Shatavari powder boiled in warm organic milk with a pinch of cardamom.',
+      'Beneficial not only for postpartum mothers, but also for women experiencing irregular menstrual cycles or perimenopausal hot flashes.',
+      'Always consult your physician for individualized dosage based on your specific digestion and delivery stage.'
+    ],
+    category: "Women's Health",
+    dosha: 'Pitta',
+    readingTimeMinutes: 3,
+    author: 'Vaidyam Clinical Panel',
+    authorTitle: 'Senior Ayurvedic Physicians',
+    classicalReference: 'Bhavaprakasha Nighantu, Guduchyadi Varga',
+    tags: ['Shatavari', 'Lactation', "Women's Health", 'Galactagogue', 'Breastfeeding'],
+    recommendedHerbOrOil: 'Shatavari Gulam & Stanya Janana Rasayana',
+    helpfulCount: 167,
+    featured: true,
+    publishedAt: '2026-10-01',
+  },
+  {
+    id: 'art_shirodhara_insomnia_anxiety',
+    slug: 'shirodhara-sleep-restoring-prana-vata-mental-calm',
+    title: 'Shirodhara & Sleep: Calming Prana Vata for Deep Postpartum Restoration',
+    summary: 'The science behind continuous warm herbal oil forehead streams for calming the nervous system, alleviating anxiety, and correcting sleep fragmentation.',
+    content: [
+      'Postpartum sleep deprivation is one of the primary drivers of hormonal imbalance and emotional vulnerability. In Ayurveda, the seat of the mind (Manas) and Prana Vata resides in the head and heart.',
+      'When sleep is continually disrupted by feeding cycles, Prana Vata becomes erratic, leading to hyper-arousal, anxiety, migraine headaches, and postpartum blues.',
+      'Shirodhara is a classical therapy where a continuous, rhythmic stream of warm medicated herbal oil (such as Brahmi or Ksheerabala tailam) is poured over the Ajna chakra (the third eye center). The gentle pendulum motion induces an alpha-wave state in the brain, activating the parasympathetic nervous system and downregulating cortisol.'
+    ],
+    keyTips: [
+      'If unable to visit a clinic for Shirodhara, practice simple Pada Abhyanga (foot massage with warm sesame or castor oil) before bedtime.',
+      'Turn off digital screens at least 45 minutes before sleep to prevent blue light from aggravating Sadhaka Pitta.',
+      'Incorporate 5 minutes of Bhramari (humming bee breath) while sitting upright to calm mental chatter.'
+    ],
+    category: 'Mind & Sleep',
+    dosha: 'Vata-Pitta',
+    readingTimeMinutes: 4,
+    author: 'Vaidyam Clinical Panel',
+    authorTitle: 'Senior Ayurvedic Physicians',
+    classicalReference: 'Astanga Sangraha, Sutrasthana, Chapter 24',
+    tags: ['Shirodhara', 'Sleep', 'Postpartum Anxiety', 'Prana Vata', 'Mental Wellness'],
+    recommendedHerbOrOil: 'Brahmi Tailam & Manasamitra Vatakam',
+    helpfulCount: 89,
+    featured: false,
+    publishedAt: '2026-10-03',
+  },
+  {
+    id: 'art_nalpamara_snana_healing',
+    slug: 'nalpamara-snana-medicinal-tree-bark-bath-healing',
+    title: 'Nalpamara Snana: The Sacred 4-Bark Bath for Tissue Disinfection & Skin Radiance',
+    summary: 'Why water steeped with the barks of four sacred Ficus trees is the gold standard for postpartum healing, perineal recovery, and reducing inflammation.',
+    content: [
+      'In Kerala tradition, no postnatal regimen is complete without Nalpamara Snana—the therapeutic herbal water bath. Nalpamara refers to the barks of four sacred fig trees: Athi (Ficus racemosa), Ithi (Ficus microcarpa), Arayal (Ficus religiosa), and Peral (Ficus benghalensis).',
+      'These barks are rich in natural tannins, flavonoids, and antimicrobial polyphenols. When boiled into a deep reddish-golden decoction with Tamarind leaves and turmeric, the water acts as a gentle, natural antiseptic wash.',
+      'For new mothers, Nalpamara bath water provides soothing relief to bruised perineal tissues, reduces localized pelvic edema, tightens micro-capillaries, and gently restores skin firmness across the abdomen.'
+    ],
+    keyTips: [
+      'Use water that is comfortably warm—never scalding hot—as excessive heat can aggravate Pitta and cause dizziness.',
+      'The decoction is equally gentle and beneficial for infant baby baths from the second week onwards.',
+      'Nalpamaram is also the base of classical Nalpamoradi Tailam, widely used to treat skin hyperpigmentation and pregnancy melasma.'
+    ],
+    category: 'Postnatal Care',
+    dosha: 'Pitta-Kapha',
+    readingTimeMinutes: 3,
+    author: 'Vaidyam Clinical Panel',
+    authorTitle: 'Senior Ayurvedic Physicians',
+    classicalReference: 'Sahasrayogam, Taila Prakarana',
+    tags: ['Nalpamara', 'Herbal Bath', 'Perineal Healing', 'Prasava Raksha', 'Kerala Ayurveda'],
+    recommendedHerbOrOil: 'Nalpamara Choornam & Nalpamoradi Kera Tailam',
+    helpfulCount: 134,
+    featured: false,
+    publishedAt: '2026-10-04',
+  },
+  {
+    id: 'art_dinacharya_daily_rituals',
+    slug: 'dinacharya-5-essential-ayurvedic-morning-rituals',
+    title: 'Dinacharya: 5 Essential Morning Rituals for Lifelong Vitality and Balance',
+    summary: 'Simple, time-tested morning habits to clear bodily toxins, sharpen mental clarity, and synchronize with nature’s circadian rhythm.',
+    content: [
+      'Dinacharya—the Ayurvedic discipline of daily routine—is based on aligning human physiology with the diurnal movements of nature.',
+      'The morning between 6:00 AM and 10:00 AM is governed by Kapha dosha, characterized by heaviness, stability, and slow movement. Engaging in specific awakening rituals clears accumulated nocturnal metabolic waste and stimulates prana before beginning the day.',
+      'These micro-habits require less than 15 minutes but provide compound benefits for digestion, oral hygiene, hormonal health, and nervous system resilience.'
+    ],
+    keyTips: [
+      '1. Jihwa Nirlekhana (Tongue Scraping): Use a copper or stainless steel scraper to remove overnight toxic coating (Ama) and stimulate taste buds.',
+      '2. Ushapan (Warm Water Hydration): Drink 1-2 glasses of warm water on an empty stomach to encourage natural peristalsis and bowel evacuation.',
+      '3. Pratimarsha Nasya: Instill 2 drops of Anu Tailam or pure warm sesame oil into each nostril to lubricate sinuses and protect against respiratory allergens.',
+      '4. Abhyanga Touch: Apply a few drops of oil behind your ears and on the crown of your head before showering.',
+      '5. Pranayama: 5 minutes of gentle Nadi Shodhana (alternate nostril breathing) to balance sympathetic and parasympathetic nervous channels.'
+    ],
+    category: 'Daily Routine (Dinacharya)',
+    dosha: 'Tridoshic',
+    readingTimeMinutes: 4,
+    author: 'Vaidyam Clinical Panel',
+    authorTitle: 'Senior Ayurvedic Physicians',
+    classicalReference: 'Astanga Hridaya, Sutrasthana, Chapter 2 (Dinacharya Adhyaya)',
+    tags: ['Dinacharya', 'Morning Routine', 'Anu Tailam', 'Tongue Scraping', 'Pranayama'],
+    recommendedHerbOrOil: 'Anu Tailam & Pure Cold-Pressed Sesame Oil',
+    helpfulCount: 78,
+    featured: false,
+    publishedAt: '2026-10-05',
+  },
+];
+

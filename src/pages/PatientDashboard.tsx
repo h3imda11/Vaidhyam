@@ -257,7 +257,7 @@ export const PatientDashboard: React.FC<PatientDashboardProps> = ({
                           Ref: {appt.id}
                         </span>
                         <h4 className="font-serif text-lg font-bold text-[#0C281B]">
-                          Consultation with {appt.doctorName}
+                          Consultation with {appt.doctorName && !appt.doctorName.includes('Ananya') ? appt.doctorName : 'Ayurvedic Physician'}
                         </h4>
                       </div>
                       <div className="text-right space-y-1">

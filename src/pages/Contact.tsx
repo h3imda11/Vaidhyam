@@ -58,89 +58,52 @@ export const Contact: React.FC = () => {
           Connect with Vaidyam
         </span>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold text-[#0C281B]">
-          Sanctuary Location & Contact
+          Contact & Online Enquiries
         </h1>
         <p className="text-sm sm:text-base text-[#143D27]/80 leading-relaxed font-light">
-          Have questions regarding Post-Delivery Care packages, scheduling an in-home therapist, or
-          visiting our Thiruvananthapuram sanctuary? Our clinical coordinators are here to assist.
+          Have questions regarding Post-Delivery Care packages, treatment consultations, or care timelines?
+          Submit an enquiry below and our care coordinator will get in touch with you.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Left Information Cards */}
         <div className="lg:col-span-5 space-y-6">
-          {/* Quick Direct Actions */}
-          <div className="p-6 rounded-3xl bg-[#0C281B] text-white space-y-4 shadow-md">
-            <h3 className="font-serif text-2xl font-bold">Direct Assistance</h3>
+          {/* Online Care Status Card */}
+          <div className="p-8 rounded-3xl bg-[#0C281B] text-white space-y-4 shadow-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#C29B38] text-xs font-bold uppercase tracking-wider">
+              <span>Patient Assistance</span>
+            </div>
+            <h3 className="font-serif text-2xl font-bold">Online Clinical Support</h3>
             <p className="text-xs text-white/80 leading-relaxed font-light">
-              For immediate questions regarding maternal care packages or urgent symptoms, connect
-              with our coordinator on WhatsApp.
+              We provide online video and audio consultations with our qualified Ayurvedic physician panel, as well as customized post-delivery care planning.
             </p>
-            <div className="pt-2 flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://wa.me/919447012890?text=Hello%20Vaidyam,%20I%20would%20like%20to%20enquire%20about%20PDC%20care%20and%20consultations."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-5 py-3 rounded-xl font-semibold text-xs shadow transition-all"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp Coordinator</span>
-              </a>
-              <a
-                href="tel:+919447012890"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-xl font-semibold text-xs transition-all"
-              >
-                <Phone className="w-4 h-4 text-[#C29B38]" />
-                <span>Call +91 94470 12890</span>
-              </a>
+            <div className="pt-2 border-t border-white/10 text-xs text-white/70 space-y-1">
+              <strong className="block text-white">Consultation Hours:</strong>
+              <span>Monday – Saturday: 9:00 AM – 5:00 PM (IST)</span>
             </div>
           </div>
 
-          {/* Details */}
-          <div className="p-6 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm space-y-5 text-xs text-[#0C281B]">
-            <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-[#2C6E49] mt-0.5 flex-shrink-0" />
-              <div>
-                <strong className="block text-sm">Vaidyam Ayurvedic Sanctuary</strong>
-                <p className="text-[#143D27]/80 mt-0.5">
-                  Sasthamangalam, Thiruvananthapuram, Kerala 695010, India
-                </p>
-                <span className="text-[11px] text-[#2C6E49] mt-1 block">
-                  Satellite Center: Panampilly Nagar, Kochi, Kerala
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-[#2C6E49] flex-shrink-0" />
-              <div>
-                <strong className="block text-sm">Email Inquiries</strong>
-                <span className="text-[#143D27]/80">care@vaidyamayurveda.com</span>
-              </div>
-            </div>
-
+          {/* Details Notice */}
+          <div className="p-6 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm space-y-4 text-xs text-[#0C281B]">
             <div className="flex items-start gap-3">
               <Clock className="w-5 h-5 text-[#2C6E49] mt-0.5 flex-shrink-0" />
               <div>
-                <strong className="block text-sm">Consultation Hours</strong>
+                <strong className="block text-sm">Response Time</strong>
                 <p className="text-[#143D27]/80 mt-0.5">
-                  Monday – Saturday: 9:00 AM – 5:00 PM IST<br />
-                  Sunday: Prior Emergency Appointments Only
+                  All online enquiries submitted through this form are reviewed by our clinical team and responded to within 4 to 6 working hours.
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* Google Maps Visual Indicator */}
-          <div className="rounded-3xl overflow-hidden border border-[#143D27]/10 shadow-sm relative h-48 bg-[#E8F5E9]/50 flex items-center justify-center p-6 text-center">
-            <div className="space-y-2">
-              <MapPin className="w-8 h-8 text-[#E06D53] mx-auto animate-bounce" />
-              <strong className="text-sm text-[#0C281B] block">
-                Vaidyam Sanctuary • Thiruvananthapuram, Kerala
-              </strong>
-              <p className="text-[11px] text-[#143D27]/70">
-                Opposite Golf Club Road, Sasthamangalam
-              </p>
+            <div className="flex items-start gap-3 pt-2 border-t border-[#143D27]/10">
+              <CheckCircle2 className="w-5 h-5 text-[#2C6E49] mt-0.5 flex-shrink-0" />
+              <div>
+                <strong className="block text-sm">Direct Phone & Sanctuary Location</strong>
+                <p className="text-[#143D27]/80 mt-0.5">
+                  Our official phone helpline and physical sanctuary location details are currently being updated and will be published shortly.
+                </p>
+              </div>
             </div>
           </div>
         </div>

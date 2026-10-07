@@ -50,11 +50,11 @@ export const PostDeliveryCare: React.FC<PostDeliveryCareProps> = ({
     },
     {
       q: 'Is the care available as home visits or at the Vaidyam sanctuary retreat?',
-      a: 'We offer both options. In Kerala (Thiruvananthapuram, Kochi, and select regions), our certified female Ayurvedic therapists can visit your home daily. Alternatively, mothers and families may stay in our tranquil residential postpartum retreat sanctuary suites.',
+      a: 'We offer both options. Our certified female Ayurvedic therapists can visit your home daily for prescribed therapies, or you may choose residence in our tranquil postpartum retreat sanctuary suites.',
     },
     {
       q: 'Are the herbal oils and bath preparations safe for breastfeeding mothers?',
-      a: 'Yes. Classical Kerala formulations such as Dhanwantharam Kuzhambu, Bala Ashwagandhadhi, and herbal Kashayams have been utilized safely for centuries. All internal rasayanas and external tailams are prescribed strictly according to your pulse and maternal state by Dr. Ananya.',
+      a: 'Yes. Classical formulations such as Dhanwantharam Kuzhambu, Bala Ashwagandhadhi, and herbal Kashayams have been utilized safely for centuries. All internal rasayanas and external tailams are prescribed strictly according to your pulse and maternal state by our qualified Ayurvedic doctors.',
     },
     {
       q: 'Does the package include gentle massage for the newborn baby?',
@@ -62,7 +62,7 @@ export const PostDeliveryCare: React.FC<PostDeliveryCareProps> = ({
     },
     {
       q: 'Can the duration or treatment plan be modified during the course?',
-      a: 'Absolutely. Every mother recovers differently. Your progress is assessed through scheduled consultations with Dr. Ananya Warrier, and therapies are adjusted dynamically to match your recovery trajectory.',
+      a: 'Absolutely. Every mother recovers differently. Your progress is assessed through scheduled consultations with our Ayurvedic physicians, and therapies are adjusted dynamically to match your recovery trajectory.',
     },
   ];
 

@@ -58,8 +58,8 @@ export const AboutVaidyam: React.FC<AboutVaidyamProps> = ({
           </div>
           <h3 className="font-serif text-xl font-bold text-[#0C281B]">Physician-Guided Care</h3>
           <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-            Every session, external herbal tailam, and internal rasayana is approved by Dr. Ananya
-            Warrier, ensuring utmost safety for both mother and nursing infant.
+            Every session, external herbal tailam, and internal rasayana is guided by qualified
+            Ayurvedic physicians, ensuring utmost safety for both mother and nursing infant.
           </p>
         </div>
       </div>

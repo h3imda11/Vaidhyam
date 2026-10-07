@@ -12,10 +12,12 @@ import {
   PhoneCall,
   MessageCircle,
   Award,
-  Leaf
+  Leaf,
+  BookOpen
 } from 'lucide-react';
-import { getPdcPackages, getDoctor, getTreatments } from '../services/dbService';
-import { PdcPackage, Doctor, Treatment } from '../types';
+import { getPdcPackages, getDoctor, getTreatments, getKnowledgeArticles } from '../services/dbService';
+import { PdcPackage, Doctor, Treatment, KnowledgeArticle } from '../types';
+import { Logo } from '../components/common/Logo';
 
 interface HomeProps {
   onNavigate: (tab: string, params?: any) => void;
@@ -31,17 +33,20 @@ export const Home: React.FC<HomeProps> = ({
   const [packages, setPackages] = useState<PdcPackage[]>([]);
   const [doctor, setDoctor] = useState<Doctor | null>(null);
   const [treatments, setTreatments] = useState<Treatment[]>([]);
+  const [articles, setArticles] = useState<KnowledgeArticle[]>([]);
 
   useEffect(() => {
     async function loadData() {
-      const [pkgs, doc, treats] = await Promise.all([
+      const [pkgs, doc, treats, arts] = await Promise.all([
         getPdcPackages(),
         getDoctor(),
         getTreatments(),
+        getKnowledgeArticles(),
       ]);
       setPackages(pkgs);
       setDoctor(doc);
       setTreatments(treats.slice(0, 4));
+      setArticles(arts.slice(0, 3));
     }
     loadData();
   }, []);
@@ -54,13 +59,18 @@ export const Home: React.FC<HomeProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+              {/* Brand Emblem & Wordmark Crest */}
+              <div className="inline-block p-1">
+                <Logo size="md" layout="horizontal" />
+              </div>
+
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#143D27]/10 text-[#0C281B] text-xs font-semibold tracking-wide">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123C31]/10 text-[#0B3D2E] text-xs font-semibold tracking-wide">
                 <span className="w-2 h-2 rounded-full bg-[#E06D53] animate-pulse" />
-                <span className="text-[#C59B3F] font-serif italic text-xs font-semibold">
+                <span className="text-[#C69A32] font-serif italic text-xs font-semibold">
                   Ancient Wisdom. Personal Healing.
                 </span>
-                <span className="text-[#143D27]/40">•</span>
+                <span className="text-[#123C31]/40">•</span>
                 <span>Specialized Postnatal Care (Sutika Paricharya)</span>
               </div>
 
@@ -498,114 +508,113 @@ export const Home: React.FC<HomeProps> = ({
         </div>
       </section>
 
-      {/* DOCTOR CONSULTATION SPOTLIGHT */}
-      {doctor && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-4">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white">
-                  <img
-                    src={doctor.photoUrl || '/src/assets/images/vaidyam_doctor_consult_1791354460579.jpg'}
-                    alt={doctor.name}
-                    className="w-full h-80 object-cover"
-                  />
-                  <div className="absolute bottom-3 left-3 px-3 py-1 bg-[#0C281B]/90 backdrop-blur-sm rounded-lg text-white text-xs font-medium">
-                    {doctor.experienceYears}+ Years Clinical Practice
-                  </div>
-                </div>
-              </div>
+      {/* AYURVEDIC KNOWLEDGE BASE & HEALTH TIPS SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div className="space-y-2 text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2C6E49]/10 text-[#2C6E49] text-xs font-bold uppercase tracking-wider">
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>Evidence-Backed Ayurvedic Wisdom</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#0C281B] font-bold">
+              Ayurvedic Knowledge Base & Health Tips
+            </h2>
+            <p className="text-sm text-[#143D27]/70 font-light max-w-2xl">
+              Searchable clinical guidance, postpartum nutritional secrets, and daily Dinacharya practices
+              curated by our Ayurvedic physicians to support your personal healing journey.
+            </p>
+          </div>
 
-              <div className="lg:col-span-8 space-y-5 text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2C6E49]/10 text-[#2C6E49] text-xs font-bold uppercase tracking-wider">
-                  Senior Ayurvedic Physician
+          <button
+            onClick={() => onNavigate('knowledge')}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2C6E49] hover:text-[#0C281B] group self-start md:self-auto"
+          >
+            <span>Browse Full Knowledge Base ({articles.length}+ articles)</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {articles.map((art) => (
+            <div
+              key={art.id}
+              onClick={() => onNavigate('knowledge')}
+              className="group bg-white rounded-3xl p-6 border border-[#143D27]/10 shadow-sm hover:shadow-xl hover:border-[#2C6E49]/30 transition-all duration-300 cursor-pointer flex flex-col justify-between text-left"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="px-2.5 py-1 rounded-full font-medium bg-[#FAF8F5] text-[#2C6E49] border border-[#2C6E49]/20">
+                    {art.category}
+                  </span>
+                  <span className="text-[#143D27]/60 flex items-center gap-1 text-[11px]">
+                    <Clock className="w-3.5 h-3.5" />
+                    {art.readingTimeMinutes} min read
+                  </span>
                 </div>
 
-                <div className="space-y-1">
-                  <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#0C281B]">
-                    {doctor.name}
-                  </h3>
-                  <p className="text-sm font-medium text-[#2C6E49]">
-                    {doctor.qualification}
-                  </p>
-                  <p className="text-xs text-[#143D27]/60">
-                    Registration No: {doctor.registrationNumber} • Kerala Ayurvedic Council
-                  </p>
-                </div>
+                <h3 className="font-serif text-lg font-bold text-[#0C281B] group-hover:text-[#2C6E49] transition-colors line-clamp-2">
+                  {art.title}
+                </h3>
 
-                <p className="text-sm text-[#143D27]/80 leading-relaxed font-light">
-                  {doctor.bio}
+                <p className="text-xs text-[#143D27]/80 line-clamp-3 leading-relaxed font-light">
+                  {art.summary}
                 </p>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs">
-                  <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#143D27]/10">
-                    <span className="text-[#143D27]/60 block text-[10px]">Specialization</span>
-                    <strong className="text-[#0C281B] font-semibold">{doctor.specialization}</strong>
+                {art.keyTips && art.keyTips.length > 0 && (
+                  <div className="pt-2">
+                    <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+                      Quick Ayurvedic Tip:
+                    </span>
+                    <p className="text-[11px] text-[#143D27]/90 italic bg-[#FAF8F5] p-2.5 rounded-xl border border-[#143D27]/5">
+                      "{art.keyTips[0]}"
+                    </p>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#143D27]/10">
-                    <span className="text-[#143D27]/60 block text-[10px]">Languages</span>
-                    <strong className="text-[#0C281B] font-semibold">{doctor.languages.join(', ')}</strong>
-                  </div>
-                  <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#143D27]/10 col-span-2 sm:col-span-1">
-                    <span className="text-[#143D27]/60 block text-[10px]">Consultation Fee</span>
-                    <strong className="text-[#0C281B] font-semibold">₹{doctor.consultationFee}</strong>
-                  </div>
-                </div>
+                )}
+              </div>
 
-                <div className="flex flex-wrap items-center gap-3 pt-3">
-                  <button
-                    onClick={onOpenBooking}
-                    className="inline-flex items-center gap-2 bg-[#E06D53] hover:bg-[#C4573E] text-white px-6 py-3 rounded-xl text-sm font-semibold shadow transition-all"
-                  >
-                    <Calendar className="w-4 h-4" />
-                    <span>Book Consultation with Dr. Ananya</span>
-                  </button>
-                  <button
-                    onClick={() => onNavigate('doctor')}
-                    className="px-5 py-3 rounded-xl border border-[#143D27]/20 text-[#0C281B] text-sm font-medium hover:bg-[#143D27]/5 transition-all"
-                  >
-                    View Complete Profile
-                  </button>
-                </div>
+              <div className="pt-5 mt-4 border-t border-[#143D27]/5 flex items-center justify-between text-xs">
+                <span className="text-[#143D27]/60 text-[11px]">
+                  By {art.author}
+                </span>
+                <span className="text-[#2C6E49] font-semibold group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
+                  Read Article <ChevronRight className="w-3.5 h-3.5" />
+                </span>
               </div>
             </div>
-          </div>
-        </section>
-      )}
+          ))}
+        </div>
+      </section>
 
-      {/* WHATSAPP & SANCTUARY DIRECT HELP BANNER */}
+      {/* ONLINE CLINICAL ENQUIRY & CARE SUPPORT BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-8 sm:p-10 rounded-3xl bg-[#0C281B] text-white flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-left">
             <span className="text-xs uppercase tracking-widest text-[#C29B38] font-bold">
-              Immediate Clinical Support
+              Personalized Healthcare Support
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold">
-              Questions regarding Post-Delivery Care or Symptoms?
+              Questions regarding Post-Delivery Care or Treatments?
             </h3>
             <p className="text-sm text-white/80 max-w-xl font-light">
-              Speak directly with our sanctuary care coordinator for package recommendations,
-              home therapist availability in your locality, or appointment scheduling.
+              Submit an online enquiry or schedule a consultation with our Ayurvedic physician to begin your personalized care journey.
             </p>
           </div>
 
           <div className="flex items-center gap-3 flex-shrink-0">
-            <a
-              href="https://wa.me/919447012890?text=Hello%20Vaidyam,%20I%20would%20like%20to%20enquire%20about%20Post-Delivery%20Care%20packages%20and%20consultations."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-5 py-3.5 rounded-xl font-semibold text-sm shadow-md transition-all"
+            <button
+              onClick={() => onNavigate('contact')}
+              className="inline-flex items-center gap-2 bg-[#E06D53] hover:bg-[#C4573E] text-white px-5 py-3.5 rounded-xl font-semibold text-sm shadow-md transition-all"
             >
-              <MessageCircle className="w-5 h-5" />
-              <span>Chat on WhatsApp</span>
-            </a>
-            <a
-              href="tel:+919447012890"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-3.5 rounded-xl font-semibold text-sm transition-all"
+              <span>Send an Enquiry</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={onOpenBooking}
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3.5 rounded-xl font-semibold text-sm transition-all"
             >
-              <PhoneCall className="w-4 h-4 text-[#C29B38]" />
-              <span>Call Sanctuary</span>
-            </a>
+              <Calendar className="w-4 h-4 text-[#C29B38]" />
+              <span>Book Consultation</span>
+            </button>
           </div>
         </div>
       </section>

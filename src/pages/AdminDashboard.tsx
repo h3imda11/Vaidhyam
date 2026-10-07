@@ -1116,7 +1116,7 @@ export const AdminDashboard: React.FC = () => {
               Doctor Profile & Consultation Pricing
             </h3>
             <p className="text-xs text-[#143D27]/70">
-              Configure Dr. Ananya Warrier's public profile and consultation fee.
+              Configure attending physician consultation fee and public profile details.
             </p>
           </div>
 

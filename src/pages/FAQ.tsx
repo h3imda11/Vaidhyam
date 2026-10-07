@@ -17,12 +17,12 @@ export const FAQ: React.FC<FAQProps> = ({ onOpenBooking }) => {
     {
       cat: 'Post-Delivery Care (PDC)',
       q: 'How soon after a C-Section can I begin Ayurvedic therapies?',
-      a: 'For Caesarean deliveries, external abhyanga on the extremities and neck may begin once mobility is established, but abdominal and deep hip therapies strictly begin only after complete wound scar healing (usually Day 14 to Day 21), following examination by Dr. Ananya Warrier.',
+      a: 'For Caesarean deliveries, external abhyanga on the extremities and neck may begin once mobility is established, but abdominal and deep hip therapies strictly begin only after complete wound scar healing (usually Day 14 to Day 21), following clinical examination by our Ayurvedic doctor.',
     },
     {
       cat: 'Consultations',
       q: 'What is the format of an online Ayurvedic consultation?',
-      a: 'Online consultations take place over secure HD video. Dr. Ananya conducts a detailed clinical evaluation covering your physical constitution, maternal symptoms, tongue analysis, and current concerns, followed by a digital prescription containing tailored medicines and diet advice.',
+      a: 'Online consultations take place over secure HD video. Our qualified physician conducts a detailed clinical evaluation covering your physical constitution, maternal symptoms, tongue analysis, and current concerns, followed by a digital prescription containing tailored medicines and diet advice.',
     },
     {
       cat: 'Safety & Medicines',
@@ -111,15 +111,6 @@ export const FAQ: React.FC<FAQProps> = ({ onOpenBooking }) => {
             <Calendar className="w-4 h-4" />
             <span>Book Consultation with Doctor</span>
           </button>
-          <a
-            href="https://wa.me/919447012890"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-[#25D366] text-white rounded-xl text-xs font-semibold shadow transition-all flex items-center gap-2"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>Ask via WhatsApp</span>
-          </a>
         </div>
       </div>
     </div>

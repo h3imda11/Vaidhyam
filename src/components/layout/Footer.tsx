@@ -88,18 +88,19 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab }) => {
             <ul className="space-y-2.5 text-sm text-[#FAF8F5]/80">
               <li>
                 <button
-                  onClick={() => handleNav('doctor')}
-                  className="hover:text-white transition-colors text-left"
-                >
-                  Dr. Ananya Warrier
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => handleNav('about')}
                   className="hover:text-white transition-colors text-left"
                 >
                   About Our Philosophy
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav('knowledge')}
+                  className="hover:text-white transition-colors text-left flex items-center gap-1.5 text-[#C29B38]"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C29B38]" />
+                  Knowledge Base & Health Tips
                 </button>
               </li>
               <li>
@@ -115,7 +116,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab }) => {
                   onClick={() => handleNav('contact')}
                   className="hover:text-white transition-colors text-left"
                 >
-                  Contact & Sanctuary Directions
+                  Online Contact & Enquiries
                 </button>
               </li>
               <li>
@@ -129,27 +130,26 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab }) => {
             </ul>
           </div>
 
-          {/* Clinic & Sanctuary Contact */}
+          {/* Care & Enquiries */}
           <div>
             <h4 className="font-serif text-lg font-semibold text-white tracking-wide mb-4">
-              Sanctuary Contact
+              Care & Inquiries
             </h4>
             <ul className="space-y-3 text-xs text-[#FAF8F5]/80">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#4C956C] flex-shrink-0 mt-0.5" />
-                <span>Sasthamangalam, Thiruvananthapuram, Kerala 695010</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#4C956C] flex-shrink-0" />
-                <span>+91 94470 12890</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#4C956C] flex-shrink-0" />
-                <span>care@vaidyamayurveda.com</span>
-              </li>
-              <li className="flex items-start gap-2.5">
                 <Clock className="w-4 h-4 text-[#4C956C] flex-shrink-0 mt-0.5" />
                 <span>Mon – Sat: 9:00 AM – 5:00 PM (IST)</span>
+              </li>
+              <li className="text-[11px] text-[#FAF8F5]/60 leading-relaxed pt-1">
+                Sanctuary telephone lines and location details are being updated. Submit your enquiry online for fast assistance.
+              </li>
+              <li className="pt-2">
+                <button
+                  onClick={() => handleNav('contact')}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E06D53] hover:bg-[#C4573E] text-white font-medium text-xs transition-colors"
+                >
+                  <span>Submit Enquiry Message</span>
+                </button>
               </li>
             </ul>
           </div>

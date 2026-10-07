@@ -19,6 +19,7 @@ import { AdminDashboard } from './pages/AdminDashboard';
 import { Contact } from './pages/Contact';
 import { AboutVaidyam } from './pages/AboutVaidyam';
 import { FAQ } from './pages/FAQ';
+import { KnowledgeBase } from './pages/KnowledgeBase';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsConditions } from './pages/TermsConditions';
 import { getDoctor } from './services/dbService';
@@ -210,25 +211,28 @@ const MainApp: React.FC = () => {
           <FAQ onOpenBooking={() => handleNavigate('book-appointment')} />
         )}
 
+        {currentTab === 'knowledge' && (
+          <KnowledgeBase
+            onOpenBooking={() => handleNavigate('book-appointment')}
+            onExplorePdc={() => handleNavigate('pdc')}
+          />
+        )}
+
         {currentTab === 'privacy' && <PrivacyPolicy />}
 
         {currentTab === 'terms' && <TermsConditions />}
       </main>
 
-      {/* Floating WhatsApp Action Button */}
-      <a
-        href="https://wa.me/919447012890?text=Hello%20Vaidyam,%20I%20would%20like%20to%20enquire%20about%20Ayurvedic%20care."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-20 lg:bottom-6 right-5 z-40 p-3.5 bg-[#25D366] text-white rounded-full shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center group"
-        title="WhatsApp Support"
-        aria-label="Contact on WhatsApp"
+      {/* Floating Online Enquiry Button */}
+      <button
+        onClick={() => handleNavigate('contact')}
+        className="fixed bottom-20 lg:bottom-6 right-5 z-40 px-4 py-3 bg-[#E06D53] hover:bg-[#C4573E] text-white rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-xs"
+        title="Send an Enquiry"
+        aria-label="Send an Enquiry"
       >
-        <MessageCircle className="w-6 h-6 fill-current" />
-        <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 font-semibold text-xs px-0 group-hover:px-2">
-          Chat with Care Coordinator
-        </span>
-      </a>
+        <MessageCircle className="w-5 h-5" />
+        <span>Enquire Online</span>
+      </button>
 
       {/* Booking Confirmation Dialog */}
       {confirmedBooking && (

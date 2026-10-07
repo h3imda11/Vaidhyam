@@ -108,8 +108,8 @@ export const Consultations: React.FC<ConsultationsProps> = ({
             </div>
             <h3 className="font-serif text-2xl font-bold text-[#0C281B]">Audio Consultation</h3>
             <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-              Direct telephone conversation with Dr. Ananya Warrier for preliminary symptoms review,
-              ongoing treatment follow-ups, or quick medication clarification.
+              Direct telephone conversation with our qualified Ayurvedic physician for preliminary symptoms review,
+              ongoing treatment follow-ups, or medication guidance.
             </p>
             <div className="pt-2 text-xs text-[#2C6E49] font-semibold">
               30 Mins • Direct Doctor Callback
@@ -120,10 +120,10 @@ export const Consultations: React.FC<ConsultationsProps> = ({
             <div className="w-12 h-12 rounded-2xl bg-[#E06D53]/10 text-[#C4573E] flex items-center justify-center">
               <Building className="w-6 h-6" />
             </div>
-            <h3 className="font-serif text-2xl font-bold text-[#0C281B]">In-Clinic Sanctuary</h3>
+            <h3 className="font-serif text-2xl font-bold text-[#0C281B]">In-Clinic Consultation</h3>
             <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-              In-person consultation at our peaceful sanctuary in Sasthamangalam, Thiruvananthapuram.
-              Includes classical pulse diagnosis (Nadi Pariksha) and spine examination.
+              In-person consultation at our peaceful Ayurvedic sanctuary clinic.
+              Includes classical pulse evaluation (Nadi Pariksha) and postural assessment.
             </p>
             <div className="pt-2 text-xs text-[#C4573E] font-semibold">
               45 Mins • Physical Nadi Pariksha

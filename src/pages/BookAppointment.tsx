@@ -236,7 +236,7 @@ export const BookAppointment: React.FC<BookAppointmentProps> = ({
                 >
                   <Building className="w-5 h-5 text-[#E06D53]" />
                   <span className="text-xs">In-Clinic</span>
-                  <span className="text-[10px] text-[#143D27]/60">Kerala Sanctuary</span>
+                  <span className="text-[10px] text-[#143D27]/60">Clinic Consultation</span>
                 </button>
               </div>
             </div>
@@ -379,15 +379,13 @@ export const BookAppointment: React.FC<BookAppointmentProps> = ({
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-white p-6 rounded-3xl border border-[#143D27]/10 shadow-sm space-y-5">
               <div className="flex items-center gap-3 pb-4 border-b border-[#143D27]/10">
-                <img
-                  src={doctor.photoUrl || '/src/assets/images/vaidyam_doctor_consult_1791354460579.jpg'}
-                  alt={doctor.name}
-                  className="w-14 h-14 rounded-2xl object-cover border border-[#143D27]/10"
-                />
+                <div className="w-12 h-12 rounded-2xl bg-[#2C6E49]/15 text-[#2C6E49] flex items-center justify-center flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
                 <div>
-                  <h3 className="font-serif text-lg font-bold text-[#0C281B]">{doctor.name}</h3>
+                  <h3 className="font-serif text-lg font-bold text-[#0C281B]">Ayurvedic Physician</h3>
                   <span className="text-xs text-[#2C6E49] font-medium block">
-                    {doctor.specialization}
+                    Qualified BAMS / MD Clinical Consultation
                   </span>
                 </div>
               </div>

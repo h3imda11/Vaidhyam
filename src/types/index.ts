@@ -160,3 +160,32 @@ export interface ClinicSettings {
   razorpayKeyId?: string;
   allowPayAtClinic: boolean;
 }
+
+export type KnowledgeCategory =
+  | 'Postnatal Care'
+  | "Women's Health"
+  | 'Gut & Agni'
+  | 'Daily Routine (Dinacharya)'
+  | 'Herbal Wisdom'
+  | 'Mind & Sleep';
+
+export interface KnowledgeArticle {
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  content: string[];
+  keyTips: string[];
+  category: KnowledgeCategory;
+  dosha: 'Vata' | 'Pitta' | 'Kapha' | 'Tridoshic' | 'Vata-Pitta' | 'Pitta-Kapha' | 'Vata-Kapha';
+  readingTimeMinutes: number;
+  author: string;
+  authorTitle?: string;
+  classicalReference?: string;
+  tags: string[];
+  recommendedHerbOrOil?: string;
+  helpfulCount: number;
+  featured?: boolean;
+  publishedAt: string;
+}
+
