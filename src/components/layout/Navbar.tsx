@@ -63,12 +63,12 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#143D27]/10 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Brand Wordmark (Logo emblem removed) */}
           <button
             onClick={() => handleNav('home')}
             className="flex items-center text-left focus:outline-none"
           >
-            <Logo size="md" />
+            <Logo size="md" showEmblem={false} />
           </button>
 
           {/* Desktop Nav Links */}

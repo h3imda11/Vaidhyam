@@ -7,6 +7,7 @@ export interface LogoProps {
   layout?: 'stacked' | 'horizontal';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   useRealisticAsset?: boolean;
+  showEmblem?: boolean;
 }
 
 /**
@@ -188,6 +189,7 @@ export const Logo: React.FC<LogoProps> = ({
   layout = 'horizontal',
   size = 'md',
   useRealisticAsset = false,
+  showEmblem = true,
 }) => {
   const isLight = variant === 'light';
 
@@ -238,13 +240,15 @@ export const Logo: React.FC<LogoProps> = ({
         layout === 'stacked'
           ? 'flex-col items-center text-center'
           : 'items-center'
-      } ${sizes.gap} select-none ${className}`}
+      } ${showEmblem ? sizes.gap : ''} select-none ${className}`}
     >
       {/* Symmetrical Emblem Symbol */}
-      <VaidhyamEmblemSvg
-        className={`${sizes.emblem} hover:scale-105 transition-transform flex-shrink-0`}
-        isLight={isLight}
-      />
+      {showEmblem && (
+        <VaidhyamEmblemSvg
+          className={`${sizes.emblem} hover:scale-105 transition-transform flex-shrink-0`}
+          isLight={isLight}
+        />
+      )}
 
       {/* Brand Typography & Tagline */}
       <div

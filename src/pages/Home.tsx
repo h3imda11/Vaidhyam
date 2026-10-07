@@ -17,7 +17,6 @@ import {
 } from 'lucide-react';
 import { getPdcPackages, getDoctor, getTreatments, getKnowledgeArticles } from '../services/dbService';
 import { PdcPackage, Doctor, Treatment, KnowledgeArticle } from '../types';
-import { Logo } from '../components/common/Logo';
 
 interface HomeProps {
   onNavigate: (tab: string, params?: any) => void;
@@ -59,11 +58,6 @@ export const Home: React.FC<HomeProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
-              {/* Brand Emblem & Wordmark Crest */}
-              <div className="inline-block p-1">
-                <Logo size="md" layout="horizontal" />
-              </div>
-
               {/* Trust Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123C31]/10 text-[#0B3D2E] text-xs font-semibold tracking-wide">
                 <span className="w-2 h-2 rounded-full bg-[#E06D53] animate-pulse" />
