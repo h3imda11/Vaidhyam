@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-ayurveda-deep: #0C281B;
+    --color-ayurveda-forest: #143D27;
+    --color-ayurveda-sage: #2C6E49;
+    --color-ayurveda-fresh: #4C956C;
+    --color-ayurveda-mint: #E8F5E9;
+    --color-ayurveda-warm: #FAF8F5;
+    --color-ayurveda-cream: #F4EFE6;
+    --color-ayurveda-coral: #E06D53;
+    --color-ayurveda-coral-dark: #C4573E;
+    --color-ayurveda-gold: #C29B38;
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #0C281B;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFE6;
+}
+::-webkit-scrollbar-thumb {
+  background: #2C6E49;
+  border-radius: 4px;
+}
+

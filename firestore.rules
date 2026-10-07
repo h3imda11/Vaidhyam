@@ -1,0 +1,95 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default Deny All
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin')
+      );
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow create: if isOwner(userId);
+      allow update: if (isOwner(userId) && request.resource.data.role == resource.data.role) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // Admin authorization list
+    match /admins/{adminId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // Public catalog collections
+    match /doctors/{doctorId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /pdc_packages/{packageId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /treatments/{treatmentId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /availability/{doctorId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /settings/{settingsId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Appointments
+    match /appointments/{appointmentId} {
+      allow read: if (isSignedIn() && resource.data.patientId == request.auth.uid) || isAdmin();
+      allow create: if isSignedIn() && request.resource.data.patientId == request.auth.uid;
+      allow update: if (isSignedIn() && resource.data.patientId == request.auth.uid) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // Post-delivery care bookings
+    match /pdc_bookings/{bookingId} {
+      allow read: if (isSignedIn() && resource.data.patientId == request.auth.uid) || isAdmin();
+      allow create: if isSignedIn() && request.resource.data.patientId == request.auth.uid;
+      allow update: if (isSignedIn() && resource.data.patientId == request.auth.uid) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // Contact enquiries
+    match /enquiries/{enquiryId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Notifications
+    match /notifications/{notificationId} {
+      allow read: if (isSignedIn() && (resource.data.userId == request.auth.uid || (resource.data.targetRole == 'admin' && isAdmin())));
+      allow create: if isSignedIn();
+      allow update: if (isSignedIn() && resource.data.userId == request.auth.uid) || isAdmin();
+      allow delete: if isAdmin();
+    }
+  }
+}

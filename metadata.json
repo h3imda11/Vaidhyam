@@ -1,0 +1,6 @@
+{
+  "name": "Vaidyam - Premium Ayurvedic Healthcare & Post-Delivery Care",
+  "description": "Expert Ayurvedic consultations, personalized treatments, and dedicated post-delivery care (Prasava Raksha) designed around you.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
