@@ -139,12 +139,12 @@ export const YogaWellness: React.FC<YogaWellnessProps> = ({ onOpenBooking }) => 
   return (
     <div className="bg-[#FFFCF7] text-[#25352E] min-h-screen text-left">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#E8F0E8]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#EDF2ED]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F0E8] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
-                <Sparkles className="w-3.5 h-3.5 text-[#F17C70]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EDF2ED] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
+                <Sparkles className="w-3.5 h-3.5 text-[#E85342]" />
                 <span>Mindful Ayurvedic Movement</span>
               </div>
 
@@ -161,14 +161,14 @@ export const YogaWellness: React.FC<YogaWellnessProps> = ({ onOpenBooking }) => 
                   onClick={onOpenBooking}
                   className="bg-[#245B45] hover:bg-[#1b4634] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow flex items-center gap-2 group"
                 >
-                  <Calendar className="w-4 h-4 text-[#F17C70]" />
+                  <Calendar className="w-4 h-4 text-[#E85342]" />
                   <span>Book a Yoga Session</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
 
                 <a
                   href="#sessions"
-                  className="bg-white hover:bg-[#E8F0E8]/40 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all"
+                  className="bg-white hover:bg-[#EDF2ED]/40 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all"
                 >
                   Explore Sessions
                 </a>
@@ -206,7 +206,7 @@ export const YogaWellness: React.FC<YogaWellnessProps> = ({ onOpenBooking }) => 
       {/* Services Grid (5 cards) */}
       <section id="sessions" className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4 mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Our Offerings
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -225,10 +225,10 @@ export const YogaWellness: React.FC<YogaWellnessProps> = ({ onOpenBooking }) => 
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#34765A] bg-[#E8F0E8] px-2.5 py-1 rounded-md">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#34765A] bg-[#EDF2ED] px-2.5 py-1 rounded-md">
                     {card.category}
                   </span>
-                  <span className="text-xs font-semibold text-[#F17C70]">
+                  <span className="text-xs font-semibold text-[#E85342]">
                     {card.duration}
                   </span>
                 </div>
@@ -257,7 +257,7 @@ export const YogaWellness: React.FC<YogaWellnessProps> = ({ onOpenBooking }) => 
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-[#69766E]">Fee:</span>
-                    <span className="font-semibold text-[#F17C70]">{card.pricing}</span>
+                    <span className="font-semibold text-[#E85342]">{card.pricing}</span>
                   </div>
                 </div>
 
@@ -295,7 +295,7 @@ export const YogaWellness: React.FC<YogaWellnessProps> = ({ onOpenBooking }) => 
       </section>
 
       {/* Practitioner / Instructor Profile */}
-      <section className="bg-[#E8F0E8]/40 py-16 border-y border-[#E4EAE4]">
+      <section className="bg-[#EDF2ED]/40 py-16 border-y border-[#E4EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
@@ -333,7 +333,7 @@ export const YogaWellness: React.FC<YogaWellnessProps> = ({ onOpenBooking }) => 
               </p>
               <button
                 onClick={onOpenBooking}
-                className="w-full bg-[#F17C70] hover:bg-[#e0695d] text-white py-3 rounded-xl font-medium text-xs transition-colors shadow-xs"
+                className="w-full bg-[#E85342] hover:bg-[#CF3E30] text-white py-3 rounded-xl font-medium text-xs transition-colors shadow-xs"
               >
                 Book Your Mindful Session
               </button>
@@ -345,7 +345,7 @@ export const YogaWellness: React.FC<YogaWellnessProps> = ({ onOpenBooking }) => 
       {/* FAQs */}
       <section className="py-16 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-2 mb-10">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Questions & Clarity
           </span>
           <h2 className="font-serif text-3xl font-bold text-[#245B45]">

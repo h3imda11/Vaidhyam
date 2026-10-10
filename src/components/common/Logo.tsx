@@ -256,12 +256,12 @@ export const Logo: React.FC<LogoProps> = ({
         {/* WORDMARK: VAIDHYAM */}
         <div className="flex items-center">
           <span
-            className={`font-serif font-bold ${sizes.title} uppercase`}
+            className={`font-sans font-extrabold ${sizes.title} uppercase`}
             style={{
               color: deepForestGreen,
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
-              letterSpacing: '0.2em',
-              fontWeight: 700,
+              fontFamily: "'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif",
+              letterSpacing: '0.22em',
+              fontWeight: 800,
             }}
           >
             VAIDHYAM
@@ -285,7 +285,7 @@ export const Logo: React.FC<LogoProps> = ({
             <span
               className={`font-sans font-medium uppercase ${sizes.tagline} whitespace-nowrap`}
               style={{
-                color: isLight ? '#E8F0E8' : '#69766E',
+                color: isLight ? '#EDF2ED' : '#69766E',
                 fontFamily: "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
                 letterSpacing: '0.14em',
               }}

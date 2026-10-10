@@ -26,10 +26,10 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
               <Logo variant="light" size="lg" />
             </button>
             <p className="text-sm text-[#FFFCF7]/80 max-w-sm leading-relaxed font-light">
-              Personalised Ayurvedic healthcare and dedicated consultations for fertility, pregnancy, postpartum recovery, yoga and everyday health. The care you deserve at every stage of life.
+              Advanced clinical wellness and dedicated consultations for fertility, pregnancy, postpartum recovery, mindful movement, and everyday vitality. The care you deserve at every stage of life.
             </p>
             <div className="flex items-center gap-2 pt-2 text-xs text-[#FFFCF7]/70">
-              <ShieldCheck className="w-4 h-4 text-[#F17C70]" />
+              <ShieldCheck className="w-4 h-4 text-[#E85342]" />
               <span>Licensed Ayurvedic Healthcare Practice</span>
             </div>
           </div>
@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
               <li>
                 <button
                   onClick={() => handleNav('fertility-care')}
-                  className="hover:text-[#F17C70] transition-colors text-left"
+                  className="hover:text-[#E85342] transition-colors text-left"
                 >
                   Fertility Care
                 </button>
@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
               <li>
                 <button
                   onClick={() => handleNav('pregnancy-care')}
-                  className="hover:text-[#F17C70] transition-colors text-left"
+                  className="hover:text-[#E85342] transition-colors text-left"
                 >
                   Pregnancy Care
                 </button>
@@ -59,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
               <li>
                 <button
                   onClick={() => handleNav('postnatal-care')}
-                  className="hover:text-[#F17C70] transition-colors text-left"
+                  className="hover:text-[#E85342] transition-colors text-left"
                 >
                   Postnatal & Baby Care
                 </button>
@@ -67,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
               <li>
                 <button
                   onClick={() => handleNav('yoga-wellness')}
-                  className="hover:text-[#F17C70] transition-colors text-left"
+                  className="hover:text-[#E85342] transition-colors text-left"
                 >
                   Yoga & Wellness
                 </button>
@@ -75,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
               <li>
                 <button
                   onClick={() => handleNav('consultations')}
-                  className="hover:text-[#F17C70] transition-colors text-left font-medium text-white"
+                  className="hover:text-[#E85342] transition-colors text-left font-medium text-white"
                 >
                   Ayurvedic Consultation
                 </button>
@@ -117,17 +117,17 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
                 {onOpenStore ? (
                   <button
                     onClick={onOpenStore}
-                    className="hover:text-[#F17C70] transition-colors text-left flex items-center gap-1.5"
+                    className="hover:text-[#E85342] transition-colors text-left flex items-center gap-1.5"
                   >
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#F17C70]" />
+                    <ShoppingBag className="w-3.5 h-3.5 text-[#E85342]" />
                     <span>Wellness Store</span>
                   </button>
                 ) : (
                   <button
                     onClick={() => handleNav('store')}
-                    className="hover:text-[#F17C70] transition-colors text-left flex items-center gap-1.5"
+                    className="hover:text-[#E85342] transition-colors text-left flex items-center gap-1.5"
                   >
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#F17C70]" />
+                    <ShoppingBag className="w-3.5 h-3.5 text-[#E85342]" />
                     <span>Wellness Store</span>
                   </button>
                 )}
@@ -150,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
             </h4>
             <ul className="space-y-3 text-xs text-[#FFFCF7]/80">
               <li className="flex items-start gap-2">
-                <Clock className="w-4 h-4 text-[#F17C70] flex-shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#E85342] flex-shrink-0 mt-0.5" />
                 <span>Mon – Sat: 9:00 AM – 5:00 PM (IST)</span>
               </li>
               <li className="text-[11px] text-[#FFFCF7]/70 leading-relaxed">
@@ -159,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
               <li className="pt-2">
                 <button
                   onClick={() => handleNav('book-appointment')}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#F17C70] hover:bg-[#e0695d] text-white font-medium text-xs transition-colors shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#E85342] hover:bg-[#CF3E30] text-white font-medium text-xs transition-colors shadow-xs"
                 >
                   <span>Book an Appointment</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -172,7 +172,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) =>
         {/* Ethical Medical Disclaimer & Policies */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#FFFCF7]/60 text-left">
           <p className="max-w-2xl leading-relaxed text-[11px]">
-            <strong>Medical Disclaimer:</strong> Vaidhyam provides personalized Ayurvedic healthcare consultations and supportive wellness guidance based on individual clinical assessments. Ayurvedic recommendations are not intended to replace emergency obstetric or acute hospital care.
+            <strong>Medical Disclaimer:</strong> Vaidhyam provides advanced clinical consultations and supportive wellness guidance based on individual medical assessments. Holistic clinical recommendations are not intended to replace emergency obstetric or acute hospital care.
           </p>
           <div className="flex flex-wrap items-center gap-3 text-xs flex-shrink-0">
             <button

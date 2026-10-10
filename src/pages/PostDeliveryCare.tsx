@@ -75,7 +75,7 @@ export const PostDeliveryCare: React.FC<PostDeliveryCareProps> = ({
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E06D53]/15 text-[#C4573E] text-xs font-bold uppercase tracking-wider">
                 <HeartPulse className="w-4 h-4" />
-                <span>Sutika Paricharya • Authentic Kerala Postnatal Healing</span>
+                <span>Sutika Paricharya • Advanced Kerala Postnatal Protocol</span>
               </div>
 
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#0C281B] font-bold tracking-tight leading-[1.14]">

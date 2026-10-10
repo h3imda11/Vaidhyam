@@ -315,7 +315,7 @@ export const BookAppointment: React.FC<BookAppointmentProps> = ({
                   <label className="text-xs font-bold text-[#25352E] uppercase tracking-wider block">
                     2. Attending Practitioner
                   </label>
-                  <div className="p-3.5 rounded-2xl bg-[#E8F0E8]/50 border border-[#245B45]/20 flex items-center justify-between">
+                  <div className="p-3.5 rounded-2xl bg-[#EDF2ED]/50 border border-[#245B45]/20 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-full bg-[#245B45] text-white flex items-center justify-center font-serif font-bold text-sm">
                         V
@@ -329,7 +329,7 @@ export const BookAppointment: React.FC<BookAppointmentProps> = ({
                         </p>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-[#F17C70]">
+                    <span className="text-xs font-bold text-[#E85342]">
                       ₹{doctor?.consultationFee || 850}
                     </span>
                   </div>

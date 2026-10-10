@@ -1,29 +1,122 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ayurveda-deep: #1E4A38;
+  --color-ayurveda-forest: #2C654D;
+  --color-ayurveda-sage: #EDF2ED;
+  --color-ayurveda-sage-muted: #E5ECE6;
+  --color-ayurveda-sage-light: #F4F7F4;
+  --color-ayurveda-coral: #E85342;
+  --color-ayurveda-coral-hover: #CF3E30;
+  --color-ayurveda-coral-bg: #FEF3F2;
+  --color-ayurveda-coral-border: #FECDCA;
+  --color-ayurveda-ivory: #FFFCF7;
+  --color-ayurveda-white: #FFFFFF;
+  --color-ayurveda-text-primary: #172620;
+  --color-ayurveda-text-secondary: #52635B;
+  --color-ayurveda-border: #DFE5DF;
+}
+
 @layer base {
   :root {
-    --color-ayurveda-deep: #245B45;
-    --color-ayurveda-forest: #34765A;
-    --color-ayurveda-sage: #E8F0E8;
-    --color-ayurveda-coral: #F17C70;
-    --color-ayurveda-coral-bg: #FFF0ED;
+    /* Primary Deep Clinical Forest */
+    --color-ayurveda-deep: #1E4A38;
+    --color-ayurveda-forest: #2C654D;
+    
+    /* Muted, desaturated green for backgrounds */
+    --color-ayurveda-sage: #EDF2ED;
+    --color-ayurveda-sage-muted: #E5ECE6;
+    --color-ayurveda-sage-light: #F4F7F4;
+    --color-ayurveda-sage-border: #D8E2DA;
+
+    /* Sharper, high-contrast coral for primary actions & CTAs */
+    --color-ayurveda-coral: #E85342;
+    --color-ayurveda-coral-hover: #CF3E30;
+    --color-ayurveda-coral-active: #B83427;
+    --color-ayurveda-coral-bg: #FEF3F2;
+    --color-ayurveda-coral-border: #FECDCA;
+
+    /* Base Neutrals & Canvas */
     --color-ayurveda-ivory: #FFFCF7;
     --color-ayurveda-white: #FFFFFF;
-    --color-ayurveda-text-primary: #25352E;
-    --color-ayurveda-text-secondary: #69766E;
-    --color-ayurveda-border: #E4EAE4;
+    --color-ayurveda-text-primary: #172620;
+    --color-ayurveda-text-secondary: #52635B;
+    --color-ayurveda-border: #DFE5DF;
   }
 
   body {
-    background-color: #FFFCF7;
-    color: #25352E;
+    background-color: var(--color-ayurveda-ivory);
+    color: var(--color-ayurveda-text-primary);
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.012em;
   }
 
-  h1, h2, h3, .font-serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+  h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.025em;
   }
+}
+
+/* Primary Action Buttons */
+.btn-primary-action {
+  background-color: var(--color-ayurveda-coral);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 4px 14px -2px rgba(232, 83, 66, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-action:hover {
+  background-color: var(--color-ayurveda-coral-hover);
+  box-shadow: 0 6px 20px -2px rgba(232, 83, 66, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Clinical Muted Backgrounds */
+.bg-clinical-sage {
+  background-color: var(--color-ayurveda-sage);
+}
+
+.bg-clinical-sage-subtle {
+  background-color: rgba(237, 242, 237, 0.5);
+}
+
+/* Futuristic & Precision Clinical Styles */
+.tech-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(30, 74, 56, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 74, 56, 0.04) 1px, transparent 1px);
+}
+
+.glow-card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  box-shadow: 0 16px 32px -8px rgba(30, 74, 56, 0.12), 0 0 0 1px rgba(232, 83, 66, 0.28);
+  transform: translateY(-2px);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(223, 229, 223, 0.8);
+}
+
+.pulse-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Custom scrollbar */
@@ -35,7 +128,7 @@
   background: #FFFCF7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #34765A;
+  background: #2C654D;
   border-radius: 4px;
 }
 

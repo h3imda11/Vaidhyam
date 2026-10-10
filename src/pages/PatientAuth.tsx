@@ -69,8 +69,8 @@ export const PatientAuth: React.FC<PatientAuthProps> = ({
           </h2>
           <p className="text-xs text-[#143D27]/70">
             {mode === 'login'
-              ? 'Access your consultation schedules and PDC care tracking'
-              : 'Register for personalized Ayurvedic healthcare and bookings'}
+              ? 'Access your consultation schedules and clinical care tracking'
+              : 'Register for advanced clinical healthcare and bookings'}
           </p>
         </div>
 

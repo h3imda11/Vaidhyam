@@ -111,11 +111,11 @@ export const FertilityCare: React.FC<FertilityCareProps> = ({
   return (
     <div className="bg-[#FFFCF7] text-[#25352E] min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#E8F0E8]/60 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#EDF2ED]/60 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl text-left space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F0E8] text-[#245B45] text-xs font-semibold tracking-wider uppercase">
-              <Sparkles className="w-3.5 h-3.5 text-[#F17C70]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EDF2ED] text-[#245B45] text-xs font-semibold tracking-wider uppercase">
+              <Sparkles className="w-3.5 h-3.5 text-[#E85342]" />
               <span>Conception & Preconception Wellness</span>
             </div>
 
@@ -130,7 +130,7 @@ export const FertilityCare: React.FC<FertilityCareProps> = ({
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onOpenBooking}
-                className="bg-[#F17C70] hover:bg-[#e0695d] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow flex items-center gap-2 group"
+                className="bg-[#E85342] hover:bg-[#CF3E30] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow flex items-center gap-2 group"
               >
                 <span>Book a Fertility Consultation</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -138,7 +138,7 @@ export const FertilityCare: React.FC<FertilityCareProps> = ({
 
               <a
                 href="#services"
-                className="bg-white hover:bg-[#E8F0E8]/50 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all"
+                className="bg-white hover:bg-[#EDF2ED]/50 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all"
               >
                 Explore Care Programs
               </a>
@@ -158,7 +158,7 @@ export const FertilityCare: React.FC<FertilityCareProps> = ({
       {/* Services Grid */}
       <section id="services" className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <div className="space-y-4 mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Care Pathways
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -177,10 +177,10 @@ export const FertilityCare: React.FC<FertilityCareProps> = ({
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#34765A] bg-[#E8F0E8] px-2.5 py-1 rounded-md">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#34765A] bg-[#EDF2ED] px-2.5 py-1 rounded-md">
                     {service.subtitle}
                   </span>
-                  <Heart className="w-4 h-4 text-[#F17C70]" />
+                  <Heart className="w-4 h-4 text-[#E85342]" />
                 </div>
 
                 <h3 className="font-serif text-2xl font-bold text-[#245B45]">
@@ -229,7 +229,7 @@ export const FertilityCare: React.FC<FertilityCareProps> = ({
       </section>
 
       {/* Practitioner Involvement & Consultation Formats */}
-      <section className="bg-[#E8F0E8]/40 py-16 border-y border-[#E4EAE4] text-left">
+      <section className="bg-[#EDF2ED]/40 py-16 border-y border-[#E4EAE4] text-left">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-5">
@@ -270,7 +270,7 @@ export const FertilityCare: React.FC<FertilityCareProps> = ({
 
             <div className="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl border border-[#E4EAE4] shadow-xs space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#E8F0E8] flex items-center justify-center text-[#245B45] font-serif font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-[#EDF2ED] flex items-center justify-center text-[#245B45] font-serif font-bold text-lg">
                   V
                 </div>
                 <div>
@@ -289,7 +289,7 @@ export const FertilityCare: React.FC<FertilityCareProps> = ({
 
               <button
                 onClick={onOpenBooking}
-                className="w-full bg-[#F17C70] hover:bg-[#e0695d] text-white py-3 rounded-xl font-medium text-xs transition-colors shadow-xs"
+                className="w-full bg-[#E85342] hover:bg-[#CF3E30] text-white py-3 rounded-xl font-medium text-xs transition-colors shadow-xs"
               >
                 Schedule Confidential Consultation
               </button>
@@ -301,7 +301,7 @@ export const FertilityCare: React.FC<FertilityCareProps> = ({
       {/* FAQs Section */}
       <section className="py-16 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <div className="text-center space-y-2 mb-10">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Questions & Answers
           </span>
           <h2 className="font-serif text-3xl font-bold text-[#245B45]">

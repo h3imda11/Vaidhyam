@@ -54,8 +54,8 @@ export const ShopifyStoreModal: React.FC<ShopifyStoreModalProps> = ({ isOpen, on
         {/* Modal Header */}
         <div className="p-6 sm:p-8 bg-white border-b border-[#E4EAE4] flex items-start justify-between">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#E8F0E8] text-[#245B45] text-[11px] font-semibold uppercase tracking-wider">
-              <ShoppingBag className="w-3.5 h-3.5 text-[#F17C70]" />
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EDF2ED] text-[#245B45] text-[11px] font-semibold uppercase tracking-wider">
+              <ShoppingBag className="w-3.5 h-3.5 text-[#E85342]" />
               <span>Vaidhyam Wellness Store</span>
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#245B45]">
@@ -67,7 +67,7 @@ export const ShopifyStoreModal: React.FC<ShopifyStoreModalProps> = ({ isOpen, on
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-[#69766E] hover:bg-[#E8F0E8]/50 hover:text-[#25352E] transition-colors"
+            className="p-2 rounded-xl text-[#69766E] hover:bg-[#EDF2ED]/50 hover:text-[#25352E] transition-colors"
             aria-label="Close store modal"
           >
             <X className="w-5 h-5" />
@@ -76,7 +76,7 @@ export const ShopifyStoreModal: React.FC<ShopifyStoreModalProps> = ({ isOpen, on
 
         {/* Modal Body / Products List */}
         <div className="p-6 sm:p-8 overflow-y-auto space-y-6">
-          <div className="p-4 rounded-2xl bg-[#E8F0E8]/40 border border-[#E4EAE4] flex items-center justify-between gap-4">
+          <div className="p-4 rounded-2xl bg-[#EDF2ED]/40 border border-[#E4EAE4] flex items-center justify-between gap-4">
             <div className="text-xs text-[#25352E] space-y-0.5">
               <span className="font-semibold text-[#245B45] block">Shopify Storefront Integration</span>
               <p className="text-[#69766E]">
@@ -102,10 +102,10 @@ export const ShopifyStoreModal: React.FC<ShopifyStoreModalProps> = ({ isOpen, on
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] uppercase font-bold text-[#34765A] bg-[#E8F0E8] px-2 py-0.5 rounded">
+                    <span className="text-[10px] uppercase font-bold text-[#34765A] bg-[#EDF2ED] px-2 py-0.5 rounded">
                       {product.badge}
                     </span>
-                    <span className="text-xs font-bold text-[#F17C70]">
+                    <span className="text-xs font-bold text-[#E85342]">
                       {product.price}
                     </span>
                   </div>

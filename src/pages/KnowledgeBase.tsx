@@ -56,7 +56,7 @@ export const KnowledgeBase: React.FC<KnowledgeBaseProps> = ({
     "Women's Health",
     'Gut & Agni',
     'Daily Routine (Dinacharya)',
-    'Herbal Wisdom',
+    'Botanical Science',
     'Mind & Sleep',
   ];
 

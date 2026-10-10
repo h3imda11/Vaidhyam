@@ -110,7 +110,7 @@ const MainApp: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFFCF7] text-[#25352E] selection:bg-[#F17C70]/20 selection:text-[#245B45]">
+    <div className="min-h-screen flex flex-col bg-[#FFFCF7] text-[#25352E] selection:bg-[#E85342]/20 selection:text-[#245B45]">
       {/* Top Navigation */}
       <Navbar
         currentTab={currentTab}
@@ -297,7 +297,7 @@ const MainApp: React.FC = () => {
       {/* Floating Online Enquiry Button */}
       <button
         onClick={() => handleNavigate('contact')}
-        className="fixed bottom-20 lg:bottom-6 right-5 z-40 px-4 py-3 bg-[#F17C70] hover:bg-[#e0695d] text-white rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-xs"
+        className="fixed bottom-20 lg:bottom-6 right-5 z-40 px-4 py-3 bg-[#E85342] hover:bg-[#CF3E30] text-white rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-xs"
         title="Send an Enquiry"
         aria-label="Send an Enquiry"
       >
@@ -309,7 +309,7 @@ const MainApp: React.FC = () => {
       {confirmedBooking && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in">
           <div className="bg-white rounded-3xl shadow-2xl border border-[#E4EAE4] w-full max-w-md overflow-hidden text-center p-8 space-y-6">
-            <div className="w-16 h-16 rounded-full bg-[#E8F0E8] text-[#245B45] flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 rounded-full bg-[#EDF2ED] text-[#245B45] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 

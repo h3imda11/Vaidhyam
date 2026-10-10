@@ -111,12 +111,12 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
   return (
     <div className="bg-[#FFFCF7] text-[#25352E] min-h-screen text-left">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#E8F0E8]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#EDF2ED]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F0E8] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
-                <Baby className="w-3.5 h-3.5 text-[#F17C70]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EDF2ED] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
+                <Baby className="w-3.5 h-3.5 text-[#E85342]" />
                 <span>Postpartum Recovery & Infant Wellbeing</span>
               </div>
 
@@ -131,7 +131,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <a
                   href="#home-care-form"
-                  className="bg-[#F17C70] hover:bg-[#e0695d] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow flex items-center gap-2"
+                  className="bg-[#E85342] hover:bg-[#CF3E30] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow flex items-center gap-2"
                 >
                   <Home className="w-4 h-4" />
                   <span>Enquire Home-Based Care</span>
@@ -139,7 +139,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
 
                 <button
                   onClick={onOpenBooking}
-                  className="bg-white hover:bg-[#E8F0E8]/40 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all flex items-center gap-2"
+                  className="bg-white hover:bg-[#EDF2ED]/40 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all flex items-center gap-2"
                 >
                   <Calendar className="w-4 h-4 text-[#34765A]" />
                   <span>Book Doctor Consultation</span>
@@ -179,7 +179,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
       <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6 space-y-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
               Section 1 · Traditional Practice
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -227,9 +227,9 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
             </button>
           </div>
 
-          <div className="lg:col-span-6 bg-[#E8F0E8]/40 p-6 sm:p-8 rounded-3xl border border-[#E4EAE4] space-y-5">
+          <div className="lg:col-span-6 bg-[#EDF2ED]/40 p-6 sm:p-8 rounded-3xl border border-[#E4EAE4] space-y-5">
             <h3 className="font-serif text-2xl font-bold text-[#245B45]">
-              Core Pillars of Postpartum Healing
+              Core Pillars of Postpartum Recovery
             </h3>
             <ul className="space-y-3 text-xs text-[#69766E]">
               <li className="flex items-start gap-2.5">
@@ -262,11 +262,11 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
       </section>
 
       {/* SECTION 2: HOME-BASED POSTNATAL CARE ACROSS KERALA & ENQUIRY FORM */}
-      <section id="home-care-form" className="py-16 sm:py-24 bg-[#FFF0ED]/40 border-b border-[#E4EAE4]">
+      <section id="home-care-form" className="py-16 sm:py-24 bg-[#FEF3F2]/40 border-b border-[#E4EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 space-y-5">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
                 Section 2 · Service Availability
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -278,7 +278,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
 
               <div className="p-4 rounded-2xl bg-white border border-[#E4EAE4] space-y-2 text-xs text-[#69766E]">
                 <div className="flex items-center gap-2 font-semibold text-[#245B45]">
-                  <MapPin className="w-4 h-4 text-[#F17C70]" />
+                  <MapPin className="w-4 h-4 text-[#E85342]" />
                   <span>Coverage Verification</span>
                 </div>
                 <p>
@@ -286,7 +286,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#FFFCF7] border border-[#F17C70]/30 text-xs text-[#69766E] space-y-1">
+              <div className="p-4 rounded-2xl bg-[#FFFCF7] border border-[#E85342]/30 text-xs text-[#69766E] space-y-1">
                 <strong className="text-[#245B45] block">Important Disclosure:</strong>
                 Submitting this form is an enquiry to verify caregiver availability in your locality and does not constitute a guaranteed booking until confirmed by our team.
               </div>
@@ -302,7 +302,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
               </p>
 
               {submitted ? (
-                <div className="p-6 rounded-2xl bg-[#E8F0E8] border border-[#245B45]/20 text-center space-y-3">
+                <div className="p-6 rounded-2xl bg-[#EDF2ED] border border-[#245B45]/20 text-center space-y-3">
                   <CheckCircle2 className="w-10 h-10 text-[#34765A] mx-auto" />
                   <h4 className="font-serif text-xl font-bold text-[#245B45]">
                     Enquiry Received
@@ -461,7 +461,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
                           className={`py-2 px-3 rounded-xl text-xs font-medium border text-center transition-all ${
                             formData.contactMethod === method
                               ? 'bg-[#245B45] text-white border-[#245B45]'
-                              : 'bg-white text-[#69766E] border-[#E4EAE4] hover:bg-[#E8F0E8]/40'
+                              : 'bg-white text-[#69766E] border-[#E4EAE4] hover:bg-[#EDF2ED]/40'
                           }`}
                         >
                           {method}
@@ -507,7 +507,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
       {/* SECTION 3: NEWBORN & CHILD CARE (WITH URGENT CARE DISCLAIMER) */}
       <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
         <div className="space-y-4 mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Section 3 · Infant Guidance
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -575,7 +575,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
       <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
               Section 4 · Gentle Touch
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -606,13 +606,13 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
               Baby Massage Safety Guidelines
             </h3>
             <div className="space-y-3 text-xs text-[#69766E]">
-              <div className="p-3 rounded-xl bg-[#E8F0E8]/40 border border-[#E4EAE4]">
+              <div className="p-3 rounded-xl bg-[#EDF2ED]/40 border border-[#E4EAE4]">
                 <strong className="text-[#245B45] block">Timing:</strong> Never massage an infant immediately after feeding. Wait at least 45 minutes to prevent regurgitation.
               </div>
-              <div className="p-3 rounded-xl bg-[#E8F0E8]/40 border border-[#E4EAE4]">
+              <div className="p-3 rounded-xl bg-[#EDF2ED]/40 border border-[#E4EAE4]">
                 <strong className="text-[#245B45] block">Umbilical Cord Healing:</strong> Avoid full baths and abdomen oil until the umbilical stump has naturally separated and healed completely.
               </div>
-              <div className="p-3 rounded-xl bg-[#E8F0E8]/40 border border-[#E4EAE4]">
+              <div className="p-3 rounded-xl bg-[#EDF2ED]/40 border border-[#E4EAE4]">
                 <strong className="text-[#245B45] block">Skin Patch Test:</strong> Always test a tiny drop of oil on your baby's arm before full-body application to verify tolerance.
               </div>
             </div>
@@ -624,7 +624,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
       <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
               Section 5 · Mindful Movement
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -654,7 +654,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
             </div>
           </div>
 
-          <div className="lg:col-span-6 bg-[#E8F0E8]/40 p-6 sm:p-8 rounded-3xl border border-[#E4EAE4] space-y-4">
+          <div className="lg:col-span-6 bg-[#EDF2ED]/40 p-6 sm:p-8 rounded-3xl border border-[#E4EAE4] space-y-4">
             <h3 className="font-serif text-2xl font-bold text-[#245B45]">
               Book an Individualized Session
             </h3>
@@ -675,7 +675,7 @@ export const PostnatalCare: React.FC<PostnatalCareProps> = ({
       {/* FAQs Section */}
       <section className="py-16 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-2 mb-10">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Frequently Asked Questions
           </span>
           <h2 className="font-serif text-3xl font-bold text-[#245B45]">

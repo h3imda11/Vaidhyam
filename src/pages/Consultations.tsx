@@ -68,7 +68,7 @@ export const Consultations: React.FC<ConsultationsProps> = ({
     {
       id: 'lifestyle-wellness',
       name: 'Lifestyle & Preventive Wellness',
-      desc: 'Dinacharya daily routines, sleep architecture, stress relief, and personalized Ayurvedic dietary planning.',
+      desc: 'Dinacharya daily routines, sleep architecture, stress modulation, and precision botanical dietary planning.',
       icon: Clock,
     },
   ];
@@ -76,17 +76,17 @@ export const Consultations: React.FC<ConsultationsProps> = ({
   return (
     <div className="bg-[#FFFCF7] text-[#25352E] min-h-screen text-left">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#E8F0E8]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#EDF2ED]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F0E8] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
-                <UserCheck className="w-3.5 h-3.5 text-[#F17C70]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EDF2ED] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
+                <UserCheck className="w-3.5 h-3.5 text-[#E85342]" />
                 <span>Doctor-Led Healthcare</span>
               </div>
 
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#245B45] tracking-tight leading-tight">
-                Personalised Ayurvedic Consultation
+                Comprehensive Clinical Consultation
               </h1>
 
               <p className="text-lg sm:text-xl text-[#69766E] font-light leading-relaxed">
@@ -96,7 +96,7 @@ export const Consultations: React.FC<ConsultationsProps> = ({
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
                   onClick={() => onOpenBooking()}
-                  className="bg-[#F17C70] hover:bg-[#e0695d] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow flex items-center gap-2 group"
+                  className="bg-[#E85342] hover:bg-[#CF3E30] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow flex items-center gap-2 group"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Book an Appointment</span>
@@ -105,7 +105,7 @@ export const Consultations: React.FC<ConsultationsProps> = ({
 
                 <button
                   onClick={onNavigateDoctor}
-                  className="bg-white hover:bg-[#E8F0E8]/40 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all flex items-center gap-2"
+                  className="bg-white hover:bg-[#EDF2ED]/40 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all flex items-center gap-2"
                 >
                   <span>Meet Practitioner</span>
                 </button>
@@ -141,7 +141,7 @@ export const Consultations: React.FC<ConsultationsProps> = ({
       {/* 7 CONSULTATION CATEGORIES */}
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
         <div className="space-y-4 mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Clinical Disciplines
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -161,7 +161,7 @@ export const Consultations: React.FC<ConsultationsProps> = ({
                 className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E4EAE4] hover:border-[#34765A]/40 transition-all duration-300 shadow-xs hover:shadow-md space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#E8F0E8] text-[#245B45] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[#EDF2ED] text-[#245B45] flex items-center justify-center">
                     <Icon className="w-5 h-5 text-[#34765A]" />
                   </div>
                   <h3 className="font-serif text-xl font-bold text-[#245B45]">
@@ -193,7 +193,7 @@ export const Consultations: React.FC<ConsultationsProps> = ({
       {/* THREE MODES */}
       <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
         <div className="text-center max-w-2xl mx-auto space-y-2 mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Accessible Care
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -237,7 +237,7 @@ export const Consultations: React.FC<ConsultationsProps> = ({
       {/* Practitioner Preview Card */}
       <section className="py-16 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white p-8 rounded-3xl border border-[#E4EAE4] shadow-xs text-center space-y-4">
-          <div className="w-20 h-20 rounded-full bg-[#E8F0E8] text-[#245B45] font-serif font-bold text-3xl flex items-center justify-center mx-auto">
+          <div className="w-20 h-20 rounded-full bg-[#EDF2ED] text-[#245B45] font-serif font-bold text-3xl flex items-center justify-center mx-auto">
             V
           </div>
           <div className="space-y-1">
@@ -250,7 +250,7 @@ export const Consultations: React.FC<ConsultationsProps> = ({
           </div>
           <button
             onClick={() => onOpenBooking()}
-            className="inline-flex items-center gap-2 bg-[#F17C70] hover:bg-[#e0695d] text-white px-7 py-3 rounded-xl text-xs font-semibold shadow-xs transition-colors"
+            className="inline-flex items-center gap-2 bg-[#E85342] hover:bg-[#CF3E30] text-white px-7 py-3 rounded-xl text-xs font-semibold shadow-xs transition-colors"
           >
             <Calendar className="w-4 h-4" />
             <span>Launch Booking Flow</span>

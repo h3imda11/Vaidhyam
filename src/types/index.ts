@@ -166,7 +166,7 @@ export type KnowledgeCategory =
   | "Women's Health"
   | 'Gut & Agni'
   | 'Daily Routine (Dinacharya)'
-  | 'Herbal Wisdom'
+  | 'Botanical Science'
   | 'Mind & Sleep';
 
 export interface KnowledgeArticle {

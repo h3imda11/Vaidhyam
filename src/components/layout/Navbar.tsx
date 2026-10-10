@@ -139,20 +139,20 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Brand Name Header: Vaidhyam */}
           <button
             onClick={() => handleNav('home')}
-            className="flex items-center gap-2.5 text-left focus:outline-none group"
+            className="flex items-center gap-3 text-left focus:outline-none group"
             aria-label="Vaidhyam Home"
           >
-            <div className="w-8 h-8 rounded-full bg-[#E8F0E8] border border-[#245B45]/20 flex items-center justify-center text-[#245B45] font-serif font-bold text-base transition-transform group-hover:scale-105">
-              V
+            <div className="relative">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#1E4A38] to-[#164A3A] text-white flex items-center justify-center font-bold text-lg shadow-sm transition-all duration-300 group-hover:shadow group-hover:scale-105 border border-[#2C654D]/30">
+                V
+              </div>
+              <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-[#E85342] rounded-full border-2 border-[#FFFCF7] animate-pulse" />
             </div>
             <div className="flex flex-col">
-              <span
-                className="text-2xl font-bold text-[#245B45] tracking-[0.16em] uppercase"
-                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-              >
+              <span className="text-xl sm:text-2xl font-extrabold text-[#1E4A38] tracking-[0.2em] uppercase font-sans">
                 VAIDHYAM
               </span>
-              <span className="text-[9px] uppercase tracking-[0.12em] text-[#69766E] font-medium -mt-0.5">
+              <span className="text-[10px] uppercase tracking-[0.18em] text-[#E85342] font-bold -mt-0.5">
                 The Care You Deserve
               </span>
             </div>
@@ -174,8 +174,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                       onMouseEnter={() => setOpenDropdown(item.id)}
                       className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-all duration-150 flex items-center gap-1 ${
                         isActive || isDropdownOpen
-                          ? 'text-[#245B45] font-semibold bg-[#E8F0E8]/70'
-                          : 'text-[#25352E]/80 hover:text-[#245B45] hover:bg-[#E8F0E8]/40'
+                          ? 'text-[#245B45] font-semibold bg-[#EDF2ED]/70'
+                          : 'text-[#25352E]/80 hover:text-[#245B45] hover:bg-[#EDF2ED]/40'
                       }`}
                     >
                       <span>{item.label}</span>
@@ -206,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                             <button
                               key={idx}
                               onClick={() => handleNav(item.id)}
-                              className="w-full text-left px-3 py-2 rounded-xl text-xs hover:bg-[#E8F0E8]/60 transition-colors group flex flex-col"
+                              className="w-full text-left px-3 py-2 rounded-xl text-xs hover:bg-[#EDF2ED]/60 transition-colors group flex flex-col"
                             >
                               <span className="font-medium text-[#25352E] group-hover:text-[#245B45]">
                                 {sub.label}
@@ -229,8 +229,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => handleNav(item.id)}
                   className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-all duration-150 relative ${
                     isActive
-                      ? 'text-[#245B45] font-semibold bg-[#E8F0E8]/70'
-                      : 'text-[#25352E]/80 hover:text-[#245B45] hover:bg-[#E8F0E8]/40'
+                      ? 'text-[#245B45] font-semibold bg-[#EDF2ED]/70'
+                      : 'text-[#25352E]/80 hover:text-[#245B45] hover:bg-[#EDF2ED]/40'
                   }`}
                 >
                   {item.label}
@@ -244,13 +244,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Notification Bell */}
             <button
               onClick={onOpenNotifications}
-              className="relative p-2 rounded-xl text-[#25352E] hover:bg-[#E8F0E8]/50 transition-colors"
+              className="relative p-2 rounded-xl text-[#25352E] hover:bg-[#EDF2ED] transition-colors"
               title="Notifications"
               aria-label="View notifications"
             >
-              <Bell className="w-5 h-5 text-[#245B45]" />
+              <Bell className="w-5 h-5 text-[#1E4A38]" />
               {unreadCount > 0 && (
-                <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-[#F17C70] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-[#E85342] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                   {unreadCount > 9 ? '9+' : unreadCount}
                 </span>
               )}
@@ -259,7 +259,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Prominent Book an Appointment Button */}
             <button
               onClick={() => handleNav('book-appointment')}
-              className="bg-[#F17C70] hover:bg-[#e0695d] text-white px-5 py-2.5 rounded-xl font-medium text-xs xl:text-sm transition-all shadow-xs hover:shadow flex items-center gap-2"
+              className="bg-[#E85342] hover:bg-[#CF3E30] text-white px-5 py-2.5 rounded-xl font-bold text-xs xl:text-sm transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Book an Appointment</span>
@@ -269,7 +269,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {userProfile ? (
               <button
                 onClick={() => handleNav(isAdmin ? 'admin-dashboard' : 'patient-dashboard')}
-                className="flex items-center gap-1.5 bg-[#E8F0E8] text-[#245B45] px-3 py-2 rounded-xl text-xs font-semibold hover:bg-[#d6e4d6] transition-colors"
+                className="flex items-center gap-1.5 bg-[#EDF2ED] text-[#1E4A38] px-3 py-2 rounded-xl text-xs font-semibold hover:bg-[#DFE7DF] transition-colors"
               >
                 {isAdmin ? <ShieldCheck className="w-4 h-4" /> : <UserIcon className="w-4 h-4" />}
                 <span>{isAdmin ? 'Admin' : 'Dashboard'}</span>
@@ -288,7 +288,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="lg:hidden flex items-center gap-2">
             <button
               onClick={() => handleNav('book-appointment')}
-              className="bg-[#F17C70] text-white px-3 py-2 rounded-xl font-medium text-xs shadow-xs flex items-center gap-1"
+              className="bg-[#E85342] text-white px-3 py-2 rounded-xl font-medium text-xs shadow-xs flex items-center gap-1"
             >
               <Calendar className="w-3.5 h-3.5" />
               <span>Book</span>
@@ -301,7 +301,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <Bell className="w-5 h-5" />
               {unreadCount > 0 && (
-                <span className="absolute top-1 right-1 w-3.5 h-3.5 bg-[#F17C70] text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+                <span className="absolute top-1 right-1 w-3.5 h-3.5 bg-[#E85342] text-white text-[9px] font-bold rounded-full flex items-center justify-center">
                   {unreadCount}
                 </span>
               )}
@@ -309,7 +309,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-[#245B45] hover:bg-[#E8F0E8]/50"
+              className="p-2 rounded-xl text-[#245B45] hover:bg-[#EDF2ED]/50"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -331,7 +331,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <div key={item.id} className="rounded-xl overflow-hidden border border-[#E4EAE4]/60 bg-white mb-1.5">
                     <button
                       onClick={() => setMobileExpandedSection(isExpanded ? null : item.id)}
-                      className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-[#25352E] hover:bg-[#E8F0E8]/40"
+                      className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-[#25352E] hover:bg-[#EDF2ED]/40"
                     >
                       <span className={isActive ? 'text-[#245B45] font-semibold' : ''}>
                         {item.label}
@@ -373,8 +373,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => handleNav(item.id)}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                     isActive
-                      ? 'bg-[#E8F0E8] text-[#245B45] font-semibold'
-                      : 'text-[#25352E] hover:bg-[#E8F0E8]/40'
+                      ? 'bg-[#EDF2ED] text-[#245B45] font-semibold'
+                      : 'text-[#25352E] hover:bg-[#EDF2ED]/40'
                   }`}
                 >
                   <span>{item.label}</span>
@@ -387,7 +387,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="pt-3 border-t border-[#E4EAE4] space-y-2">
             <button
               onClick={() => handleNav('book-appointment')}
-              className="w-full flex items-center justify-center gap-2 bg-[#F17C70] text-white py-3 rounded-xl font-medium text-xs shadow-xs"
+              className="w-full flex items-center justify-center gap-2 bg-[#E85342] hover:bg-[#CF3E30] text-white py-3 rounded-xl font-bold text-xs shadow-sm cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Book an Appointment</span>
@@ -397,7 +397,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="space-y-1 pt-1">
                 <button
                   onClick={() => handleNav(isAdmin ? 'admin-dashboard' : 'patient-dashboard')}
-                  className="w-full py-2.5 rounded-xl text-xs font-semibold bg-[#E8F0E8] text-[#245B45] text-center"
+                  className="w-full py-2.5 rounded-xl text-xs font-semibold bg-[#EDF2ED] text-[#245B45] text-center"
                 >
                   My {isAdmin ? 'Admin' : 'Patient'} Dashboard ({userProfile.name})
                 </button>

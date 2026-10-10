@@ -19,7 +19,7 @@ export const CancellationRefundPolicy: React.FC<CancellationRefundPolicyProps> =
       )}
 
       <div className="space-y-3">
-        <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+        <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
           Patient Information
         </span>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">

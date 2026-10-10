@@ -23,11 +23,11 @@ export const AboutVaidyam: React.FC<AboutVaidyamProps> = ({
   return (
     <div className="bg-[#FFFCF7] text-[#25352E] min-h-screen text-left">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#E8F0E8]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#EDF2ED]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F0E8] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
-              <Sparkles className="w-3.5 h-3.5 text-[#F17C70]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EDF2ED] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#E85342]" />
               <span>Vaidhyam Healthcare Practice</span>
             </div>
 
@@ -56,7 +56,7 @@ export const AboutVaidyam: React.FC<AboutVaidyamProps> = ({
       <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
               Our Philosophy
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -90,7 +90,7 @@ export const AboutVaidyam: React.FC<AboutVaidyamProps> = ({
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-[#E8F0E8]/50 p-6 sm:p-8 rounded-3xl border border-[#E4EAE4] space-y-4">
+          <div className="lg:col-span-5 bg-[#EDF2ED]/50 p-6 sm:p-8 rounded-3xl border border-[#E4EAE4] space-y-4">
             <h3 className="font-serif text-2xl font-bold text-[#245B45]">
               Core Principles
             </h3>
@@ -117,14 +117,14 @@ export const AboutVaidyam: React.FC<AboutVaidyamProps> = ({
         <div className="max-w-4xl mx-auto bg-white p-6 sm:p-10 rounded-3xl border border-[#E4EAE4] shadow-xs">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-4 text-center">
-              <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-[#E8F0E8] border-2 border-[#34765A]/20 flex items-center justify-center text-[#245B45] font-serif font-bold text-4xl sm:text-5xl mx-auto">
+              <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-[#EDF2ED] border-2 border-[#34765A]/20 flex items-center justify-center text-[#245B45] font-serif font-bold text-4xl sm:text-5xl mx-auto">
                 V
               </div>
             </div>
 
             <div className="md:col-span-8 space-y-4">
               <div className="space-y-1">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
                   Ayurvedic Healthcare Practitioner
                 </span>
                 <h3 className="font-serif text-3xl font-bold text-[#245B45]">
@@ -155,7 +155,7 @@ export const AboutVaidyam: React.FC<AboutVaidyamProps> = ({
       {/* Consultation Formats */}
       <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10">
         <div className="max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Accessible Healthcare
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -201,7 +201,7 @@ export const AboutVaidyam: React.FC<AboutVaidyamProps> = ({
         <div className="pt-4">
           <button
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-2 bg-[#F17C70] hover:bg-[#e0695d] text-white px-8 py-3.5 rounded-xl text-sm font-medium transition-colors shadow-xs"
+            className="inline-flex items-center gap-2 bg-[#E85342] hover:bg-[#CF3E30] text-white px-8 py-3.5 rounded-xl text-sm font-medium transition-colors shadow-xs"
           >
             <Calendar className="w-4 h-4" />
             <span>Schedule Your Appointment</span>

@@ -57,7 +57,7 @@ export const PregnancyCare: React.FC<PregnancyCareProps> = ({
         'Partner bonding practices and mindful conversational routines with the unborn baby',
         'Herbal bath preparations and gentle foot therapies for nervous system calming',
       ],
-      suitable: 'Mothers seeking deep emotional tranquility and ancient mindful bonding with their baby.',
+      suitable: 'Mothers seeking deep emotional tranquility and conscious mindful bonding with their baby.',
     },
     {
       id: 'pregnancy-yoga',
@@ -111,12 +111,12 @@ export const PregnancyCare: React.FC<PregnancyCareProps> = ({
   return (
     <div className="bg-[#FFFCF7] text-[#25352E] min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#FFF0ED]/80 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#FEF3F2]/80 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 text-left space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF0ED] text-[#F17C70] text-xs font-semibold tracking-wider uppercase border border-[#F17C70]/20">
-                <Heart className="w-3.5 h-3.5 text-[#F17C70]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FEF3F2] text-[#E85342] text-xs font-semibold tracking-wider uppercase border border-[#E85342]/20">
+                <Heart className="w-3.5 h-3.5 text-[#E85342]" />
                 <span>Maternal & Fetal Wellbeing</span>
               </div>
 
@@ -139,7 +139,7 @@ export const PregnancyCare: React.FC<PregnancyCareProps> = ({
 
                 <a
                   href="#services"
-                  className="bg-white hover:bg-[#E8F0E8]/40 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all"
+                  className="bg-white hover:bg-[#EDF2ED]/40 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all"
                 >
                   View Prenatal Services
                 </a>
@@ -178,7 +178,7 @@ export const PregnancyCare: React.FC<PregnancyCareProps> = ({
       {/* Services Grid */}
       <section id="services" className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <div className="space-y-4 mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Dedicated Support
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
@@ -197,10 +197,10 @@ export const PregnancyCare: React.FC<PregnancyCareProps> = ({
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#34765A] bg-[#E8F0E8] px-2.5 py-1 rounded-md">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#34765A] bg-[#EDF2ED] px-2.5 py-1 rounded-md">
                     {service.subtitle}
                   </span>
-                  <Sparkles className="w-4 h-4 text-[#F17C70]" />
+                  <Sparkles className="w-4 h-4 text-[#E85342]" />
                 </div>
 
                 <h3 className="font-serif text-2xl font-bold text-[#245B45]">
@@ -225,7 +225,7 @@ export const PregnancyCare: React.FC<PregnancyCareProps> = ({
                   </ul>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[#FFF0ED]/40 border border-[#F17C70]/20 text-xs text-[#25352E]">
+                <div className="p-3 rounded-xl bg-[#FEF3F2]/40 border border-[#E85342]/20 text-xs text-[#25352E]">
                   <span className="font-semibold text-[#245B45]">Best Suited For: </span>
                   {service.suitable}
                 </div>
@@ -249,7 +249,7 @@ export const PregnancyCare: React.FC<PregnancyCareProps> = ({
       </section>
 
       {/* Practitioner Consultation Formats */}
-      <section className="bg-[#E8F0E8]/30 py-16 border-y border-[#E4EAE4] text-left">
+      <section className="bg-[#EDF2ED]/30 py-16 border-y border-[#E4EAE4] text-left">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
@@ -291,7 +291,7 @@ export const PregnancyCare: React.FC<PregnancyCareProps> = ({
               </p>
               <button
                 onClick={onOpenBooking}
-                className="w-full bg-[#F17C70] hover:bg-[#e0695d] text-white py-3 rounded-xl font-medium text-xs transition-colors shadow-xs"
+                className="w-full bg-[#E85342] hover:bg-[#CF3E30] text-white py-3 rounded-xl font-medium text-xs transition-colors shadow-xs"
               >
                 Book Your Prenatal Session
               </button>
@@ -303,7 +303,7 @@ export const PregnancyCare: React.FC<PregnancyCareProps> = ({
       {/* FAQs Section */}
       <section className="py-16 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <div className="text-center space-y-2 mb-10">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E85342]">
             Helpful Information
           </span>
           <h2 className="font-serif text-3xl font-bold text-[#245B45]">

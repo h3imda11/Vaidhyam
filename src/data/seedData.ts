@@ -290,7 +290,7 @@ export const SEED_KNOWLEDGE_ARTICLES: KnowledgeArticle[] = [
     id: 'art_sutika_golden_window',
     slug: '42-day-postpartum-golden-window-ayurveda',
     title: 'The 42-Day Golden Window: Why Sutika Paricharya Shapes Lifelong Maternal Health',
-    summary: 'Classical Astanga Hridaya wisdom on how the first 6 weeks following childbirth establish a mother’s vitality, bone strength, and hormonal balance for decades.',
+    summary: 'Classical Astanga Hridaya medical insights on how the first 6 weeks following childbirth establish a mother’s vitality, bone strength, and hormonal balance for decades.',
     content: [
       'In classical Ayurvedic medicine, childbirth is not merely a biological endpoint—it is viewed as a complete physiological rebirth of the mother. During labor, the dramatic physical separation of the baby and placenta creates an instantaneous internal void within the abdomen, causing an immediate, acute aggravation of Vata dosha.',
       'According to Astanga Hridaya (Sharira Sthana), if this provoked Vata is left unchecked, it manifests as chronic joint pain, fatigue, digestive weakness, metabolic slowdown, and postpartum hormonal volatility.',
@@ -320,7 +320,7 @@ export const SEED_KNOWLEDGE_ARTICLES: KnowledgeArticle[] = [
     title: 'Postnatal Abhyanga: Why Warm Medicated Oil Therapy is Essential for New Mothers',
     summary: 'Discover how daily therapeutic oil application relieves spinal strain, stimulates lymphatic drainage, and calms postpartum nervous exhaustion.',
     content: [
-      'Abhyanga is not a superficial spa massage; it is an ancient Ayurvedic medical therapy rooted in marma vital point stimulation and transdermal herbal assimilation.',
+      'Abhyanga is not a superficial spa massage; it is an evidence-grounded Ayurvedic clinical therapy rooted in marma vital point stimulation and transdermal herbal assimilation.',
       'Carrying a baby for nine months shifts the center of gravity, exerting enormous mechanical stress on the lumbar spine and pelvis. Following labor, prolonged nursing postures and sleep deprivation further strain the trapezius and rhomboid muscles.',
       'Medicated oils such as Dhanwantharam Kuzhambu and Ksheerabala Tailam are cooked with up to 40 restorative botanical roots, including Bala (Sida cordifolia), Ashwagandha, and Dasamoola. As warm oil is massaged in long, rhythmic strokes along the lymph channels, it lubricates dry, agitated nerve endings and promotes deep endorphin release.',
       'The heat and gentle pressure also enhance oxytocin secretion, which directly facilitates smooth lactation while accelerating safe uterine involution.'

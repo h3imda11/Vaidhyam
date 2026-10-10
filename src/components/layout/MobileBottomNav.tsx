@@ -44,11 +44,11 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
         <button
           onClick={() => handleNav('postnatal-care')}
           className={`flex flex-col items-center justify-center py-1 relative transition-all ${
-            currentTab === 'postnatal-care' ? 'text-[#F17C70]' : 'text-[#69766E]'
+            currentTab === 'postnatal-care' ? 'text-[#E85342]' : 'text-[#69766E]'
           }`}
         >
-          <Heart className={`w-5 h-5 ${currentTab === 'postnatal-care' ? 'stroke-[2.5] text-[#F17C70]' : ''}`} />
-          <span className={`text-[10px] mt-0.5 ${currentTab === 'postnatal-care' ? 'font-bold text-[#F17C70]' : 'font-medium'}`}>
+          <Heart className={`w-5 h-5 ${currentTab === 'postnatal-care' ? 'stroke-[2.5] text-[#E85342]' : ''}`} />
+          <span className={`text-[10px] mt-0.5 ${currentTab === 'postnatal-care' ? 'font-bold text-[#E85342]' : 'font-medium'}`}>
             Postnatal
           </span>
         </button>
@@ -70,11 +70,11 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
         <button
           onClick={() => handleNav('book-appointment')}
           className={`flex flex-col items-center justify-center py-1 transition-all ${
-            currentTab === 'book-appointment' ? 'text-[#F17C70]' : 'text-[#69766E]'
+            currentTab === 'book-appointment' ? 'text-[#E85342]' : 'text-[#69766E]'
           }`}
         >
-          <Calendar className={`w-5 h-5 ${currentTab === 'book-appointment' ? 'stroke-[2.5] text-[#F17C70]' : ''}`} />
-          <span className={`text-[10px] mt-0.5 ${currentTab === 'book-appointment' ? 'font-bold text-[#F17C70]' : 'font-medium'}`}>
+          <Calendar className={`w-5 h-5 ${currentTab === 'book-appointment' ? 'stroke-[2.5] text-[#E85342]' : ''}`} />
+          <span className={`text-[10px] mt-0.5 ${currentTab === 'book-appointment' ? 'font-bold text-[#E85342]' : 'font-medium'}`}>
             Book
           </span>
         </button>
