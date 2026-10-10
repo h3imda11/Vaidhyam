@@ -2,22 +2,21 @@
 
 @layer base {
   :root {
-    --color-ayurveda-deep: #164A3A;
-    --color-ayurveda-forest: #164A3A;
-    --color-ayurveda-sage: #6F963F;
-    --color-ayurveda-fresh: #6F963F;
-    --color-ayurveda-mint: #EBF2E4;
-    --color-ayurveda-warm: #F8F6EF;
-    --color-ayurveda-cream: #F8F6EF;
-    --color-ayurveda-coral: #E06D53;
-    --color-ayurveda-coral-dark: #C4573E;
-    --color-ayurveda-gold: #C7A45A;
-    --color-ayurveda-charcoal: #202522;
+    --color-ayurveda-deep: #245B45;
+    --color-ayurveda-forest: #34765A;
+    --color-ayurveda-sage: #E8F0E8;
+    --color-ayurveda-coral: #F17C70;
+    --color-ayurveda-coral-bg: #FFF0ED;
+    --color-ayurveda-ivory: #FFFCF7;
+    --color-ayurveda-white: #FFFFFF;
+    --color-ayurveda-text-primary: #25352E;
+    --color-ayurveda-text-secondary: #69766E;
+    --color-ayurveda-border: #E4EAE4;
   }
 
   body {
-    background-color: #F8F6EF;
-    color: #202522;
+    background-color: #FFFCF7;
+    color: #25352E;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
@@ -33,10 +32,10 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8F6EF;
+  background: #FFFCF7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #164A3A;
+  background: #34765A;
   border-radius: 4px;
 }
 

@@ -1,144 +1,213 @@
 import React from 'react';
-import { ShieldCheck, HeartPulse, Award, Leaf, Users, Calendar } from 'lucide-react';
+import {
+  Sparkles,
+  ShieldCheck,
+  Heart,
+  Calendar,
+  CheckCircle2,
+  Video,
+  Phone,
+  Building,
+  ArrowRight,
+  UserCheck
+} from 'lucide-react';
 
 interface AboutVaidyamProps {
   onOpenBooking: () => void;
-  onExplorePdc: () => void;
+  onExplorePdc?: () => void;
 }
 
 export const AboutVaidyam: React.FC<AboutVaidyamProps> = ({
   onOpenBooking,
-  onExplorePdc,
 }) => {
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16 pb-24 text-left">
-      {/* Intro Banner */}
-      <div className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2C6E49]/10 text-[#2C6E49] text-xs font-bold uppercase tracking-wider">
-          <Leaf className="w-4 h-4" />
-          <span>VAIDHYAM — Ancient Wisdom. Personal Healing.</span>
-        </div>
-        <h1 className="font-serif text-4xl sm:text-5xl font-bold text-[#0C281B]">
-          Authentic Classical Ayurveda for Modern Life
-        </h1>
-        <p className="text-base sm:text-lg text-[#143D27]/80 leading-relaxed font-light">
-          Rooted in the ancient healing traditions of Kerala and guided by classical texts like
-          Astanga Hridaya, VAIDHYAM was established to provide genuine, doctor-led healthcare without
-          hyperbolic commercial claims.
-        </p>
-      </div>
-
-      {/* Principles */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-8 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm space-y-3">
-          <div className="w-12 h-12 rounded-2xl bg-[#2C6E49]/10 text-[#2C6E49] flex items-center justify-center">
-            <Award className="w-6 h-6" />
-          </div>
-          <h3 className="font-serif text-xl font-bold text-[#0C281B]">No Exaggerated Claims</h3>
-          <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-            We do not promise instant miracles or universal cures. We practice authentic, methodical
-            Ayurveda that respects your body’s natural regenerative pace and biological milestones.
-          </p>
-        </div>
-
-        <div className="p-8 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm space-y-3">
-          <div className="w-12 h-12 rounded-2xl bg-[#E06D53]/10 text-[#C4573E] flex items-center justify-center">
-            <HeartPulse className="w-6 h-6" />
-          </div>
-          <h3 className="font-serif text-xl font-bold text-[#0C281B]">Maternal Focus</h3>
-          <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-            Sutika Paricharya (post-delivery care) is our cornerstone discipline. We believe maternal
-            rejuvenation in the 42 days following birth shapes a woman’s vitality for decades.
-          </p>
-        </div>
-
-        <div className="p-8 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm space-y-3">
-          <div className="w-12 h-12 rounded-2xl bg-[#2C6E49]/10 text-[#2C6E49] flex items-center justify-center">
-            <ShieldCheck className="w-6 h-6" />
-          </div>
-          <h3 className="font-serif text-xl font-bold text-[#0C281B]">Physician-Guided Care</h3>
-          <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-            Every session, external herbal tailam, and internal rasayana is guided by qualified
-            Ayurvedic physicians, ensuring utmost safety for both mother and nursing infant.
-          </p>
-        </div>
-      </div>
-
-      {/* Brand Identity & Sacred Emblem Section */}
-      <div className="p-8 sm:p-12 rounded-3xl bg-[#F8F6EF] border border-[#164A3A]/15 shadow-sm space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <div className="md:col-span-5 flex justify-center">
-            <div className="bg-[#F8F6EF] p-4 rounded-3xl shadow-sm border border-[#164A3A]/10 max-w-xs w-full text-center">
-              <img
-                src="/src/assets/images/vaidhyam_brand_logo_1791379543112.jpg"
-                alt="VAIDHYAM — Ancient Wisdom. Personal Healing."
-                className="w-full h-auto rounded-2xl mx-auto"
-              />
+    <div className="bg-[#FFFCF7] text-[#25352E] min-h-screen text-left">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#E8F0E8]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F0E8] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#F17C70]" />
+              <span>Vaidhyam Healthcare Practice</span>
             </div>
-          </div>
 
-          <div className="md:col-span-7 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7A45A]">
-              Brand Identity & Symbology
-            </span>
-            <h2 className="font-serif text-3xl font-bold text-[#164A3A]">
-              The Sacred Geometry of VAIDHYAM
-            </h2>
-            <p className="text-xs sm:text-sm text-[#202522]/80 leading-relaxed font-light">
-              Our emblem is centered on an elegant symmetrical <strong>“V”</strong> sculpted from deep forest-green medicinal leaf contours, encasing a human-healing silhouette of upward-reaching arms that evoke young Ayurvedic healing flora.
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#245B45] tracking-tight leading-tight">
+              Rooted in Ayurveda. Focused on You.
+            </h1>
+
+            <p className="text-lg sm:text-xl text-[#69766E] font-light leading-relaxed">
+              At Vaidhyam, our mission is to deliver professional, compassionate Ayurvedic healthcare tailored to modern living. Guided by classical principles and evidence-informed clinical assessment, we provide the care you deserve across every chapter of life.
             </p>
-            <div className="space-y-2.5 text-xs text-[#202522]/80">
-              <div className="flex items-start gap-2.5">
-                <div className="w-2 h-2 rounded-full bg-[#C7A45A] mt-1.5 flex-shrink-0" />
-                <span><strong>The Gold Orb:</strong> Represents Prana (life-force consciousness), healing vital energy, and celestial balance.</span>
+
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <button
+                onClick={onOpenBooking}
+                className="bg-[#245B45] hover:bg-[#1b4634] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow flex items-center gap-2 group"
+              >
+                <span>Book an Appointment</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Introduction & Philosophy */}
+      <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 space-y-5">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+              Our Philosophy
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
+              Healthcare That Begins with Understanding
+            </h2>
+            <p className="text-[#69766E] text-sm leading-relaxed">
+              Ayurveda teaches that every individual possesses a distinct physiological constitution (Prakriti). Health is not a one-size-fits-all formula, but a delicate equilibrium between your internal biology, your environment, diet, and emotional state.
+            </p>
+            <p className="text-[#69766E] text-sm leading-relaxed">
+              We reject exaggerated commercial promises. Instead, we offer thoughtful clinical listening, verified natural therapeutics, and practical lifestyle adjustments that support your long-term vitality.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
+              <div className="p-4 rounded-xl bg-white border border-[#E4EAE4] space-y-1">
+                <h4 className="text-xs font-bold text-[#245B45] uppercase tracking-wider">
+                  Individual Clinical Suitability
+                </h4>
+                <p className="text-xs text-[#69766E]">
+                  Every therapeutic recommendation is based on direct evaluation by our licensed physician.
+                </p>
               </div>
-              <div className="flex items-start gap-2.5">
-                <div className="w-2 h-2 rounded-full bg-[#164A3A] mt-1.5 flex-shrink-0" />
-                <span><strong>The Mortar Vessel:</strong> The classical herbal bowl anchored with a thin muted-gold rim, embodying centuries of apothecary wisdom.</span>
+
+              <div className="p-4 rounded-xl bg-white border border-[#E4EAE4] space-y-1">
+                <h4 className="text-xs font-bold text-[#245B45] uppercase tracking-wider">
+                  Empathetic Family Care
+                </h4>
+                <p className="text-xs text-[#69766E]">
+                  Specialized care pathways for couples, expectant mothers, and postpartum recovery.
+                </p>
               </div>
-              <div className="flex items-start gap-2.5">
-                <div className="w-2 h-2 rounded-full bg-[#6F963F] mt-1.5 flex-shrink-0" />
-                <span><strong>The Rising Stem:</strong> A slender gold-and-green axis uniting clinical medicine with personal regenerative healing.</span>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5 bg-[#E8F0E8]/50 p-6 sm:p-8 rounded-3xl border border-[#E4EAE4] space-y-4">
+            <h3 className="font-serif text-2xl font-bold text-[#245B45]">
+              Core Principles
+            </h3>
+            <ul className="space-y-3 text-xs text-[#69766E]">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#34765A] flex-shrink-0 mt-0.5" />
+                <span><strong>No False Promises:</strong> We provide authentic, realistic guidance and collaborate respectfully with modern medicine.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#34765A] flex-shrink-0 mt-0.5" />
+                <span><strong>Holistic Nutrition (Ahara):</strong> Wholesome, seasonal food recommendations tailored to your metabolic digestion (Agni).</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#34765A] flex-shrink-0 mt-0.5" />
+                <span><strong>Gentle Therapies:</strong> Pure herbal oils, classical steam, and restorative rasayanas formulated with uncompromised quality.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Practitioner Profile & Credentials */}
+      <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
+        <div className="max-w-4xl mx-auto bg-white p-6 sm:p-10 rounded-3xl border border-[#E4EAE4] shadow-xs">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-4 text-center">
+              <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-[#E8F0E8] border-2 border-[#34765A]/20 flex items-center justify-center text-[#245B45] font-serif font-bold text-4xl sm:text-5xl mx-auto">
+                V
+              </div>
+            </div>
+
+            <div className="md:col-span-8 space-y-4">
+              <div className="space-y-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+                  Ayurvedic Healthcare Practitioner
+                </span>
+                <h3 className="font-serif text-3xl font-bold text-[#245B45]">
+                  Ayurvedic Physician
+                </h3>
+                <p className="text-xs font-semibold text-[#34765A]">
+                  BAMS, MD (Ayu) · Specialization in Post-Delivery Care (Sutika Paricharya) & Classical Panchakarma
+                </p>
+              </div>
+
+              <p className="text-xs text-[#69766E] leading-relaxed">
+                Our qualified Ayurvedic practitioner holds verified university degrees in Ayurvedic Medicine and Surgery (BAMS) and Postgraduate specialization (MD Ayu). Consultations focus on clinical evaluation, pulse assessment, and personalized health guidance.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <button
+                  onClick={onOpenBooking}
+                  className="bg-[#245B45] hover:bg-[#1b4634] text-white px-6 py-2.5 rounded-xl text-xs font-medium transition-colors"
+                >
+                  Book Consultation with Doctor
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Narrative Section */}
-      <div className="p-8 sm:p-12 rounded-3xl bg-[#FAF8F5] border border-[#143D27]/10 space-y-6">
-        <h2 className="font-serif text-3xl font-bold text-[#0C281B]">
-          Bridging Vedic Wisdom with Modern Motherhood
-        </h2>
-        <div className="space-y-4 text-xs sm:text-sm text-[#143D27]/80 leading-relaxed font-light">
-          <p>
-            In traditional Kerala homes, the period following childbirth was treated as sacred. Mothers were
-            tended to with warmed medicated baths, continuous herbal massages, specialized diets of
-            nourishing grains and restorative lehyams, and shielded from environmental stresses.
-          </p>
-          <p>
-            Today, nuclear households and fast-paced professional lives frequently deprive new mothers of
-            this crucial period of recuperation. Vaidyam was founded to bridge this gap: offering
-            flexible, structured postpartum programs either in our tranquil sanctuary retreat or directly
-            at home through certified female therapists.
+      {/* Consultation Formats */}
+      <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10">
+        <div className="max-w-2xl mx-auto space-y-2">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+            Accessible Healthcare
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
+            Available Consultation Formats
+          </h2>
+          <p className="text-[#69766E] text-xs sm:text-sm">
+            Choose the consultation mode that best fits your schedule and comfort.
           </p>
         </div>
 
-        <div className="pt-4 flex flex-wrap items-center gap-4">
-          <button
-            onClick={onExplorePdc}
-            className="px-6 py-3.5 bg-[#E06D53] hover:bg-[#C4573E] text-white rounded-xl text-xs font-semibold shadow transition-all"
-          >
-            Explore Post-Delivery Care Packages
-          </button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div className="bg-white p-6 rounded-2xl border border-[#E4EAE4] space-y-3">
+            <Video className="w-6 h-6 text-[#34765A]" />
+            <h3 className="font-serif text-xl font-bold text-[#245B45]">
+              Online Video Consultation
+            </h3>
+            <p className="text-xs text-[#69766E] leading-relaxed">
+              Secure, high-definition tele-consultation accessible directly from your phone or computer. Perfect for follow-ups and out-of-station patients.
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-[#E4EAE4] space-y-3">
+            <Phone className="w-6 h-6 text-[#34765A]" />
+            <h3 className="font-serif text-xl font-bold text-[#245B45]">
+              Audio Consultation
+            </h3>
+            <p className="text-xs text-[#69766E] leading-relaxed">
+              Direct telephone callback at your reserved time. Ideal when video connectivity is limited or for quick dietary discussions.
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-[#E4EAE4] space-y-3">
+            <Building className="w-6 h-6 text-[#34765A]" />
+            <h3 className="font-serif text-xl font-bold text-[#245B45]">
+              In-Clinic Sanctuary Visit
+            </h3>
+            <p className="text-xs text-[#69766E] leading-relaxed">
+              In-person consultation featuring traditional pulse evaluation (Nadi Pariksha) and comprehensive physical examination.
+            </p>
+          </div>
+        </div>
+
+        <div className="pt-4">
           <button
             onClick={onOpenBooking}
-            className="px-6 py-3.5 bg-white border border-[#143D27]/20 text-[#0C281B] rounded-xl text-xs font-semibold hover:bg-[#FAF8F5] transition-all"
+            className="inline-flex items-center gap-2 bg-[#F17C70] hover:bg-[#e0695d] text-white px-8 py-3.5 rounded-xl text-sm font-medium transition-colors shadow-xs"
           >
-            Book Clinical Consultation
+            <Calendar className="w-4 h-4" />
+            <span>Schedule Your Appointment</span>
           </button>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

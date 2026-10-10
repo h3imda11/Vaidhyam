@@ -4,8 +4,12 @@ import { Navbar } from './components/layout/Navbar';
 import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { Footer } from './components/layout/Footer';
 import { NotificationsModal } from './components/common/NotificationsModal';
+import { ShopifyStoreModal } from './components/common/ShopifyStoreModal';
 import { Home } from './pages/Home';
-import { PostDeliveryCare } from './pages/PostDeliveryCare';
+import { FertilityCare } from './pages/FertilityCare';
+import { PregnancyCare } from './pages/PregnancyCare';
+import { PostnatalCare } from './pages/PostnatalCare';
+import { YogaWellness } from './pages/YogaWellness';
 import { PdcPackageDetails } from './pages/PdcPackageDetails';
 import { PdcBookingFlow } from './pages/PdcBookingFlow';
 import { Consultations } from './pages/Consultations';
@@ -22,6 +26,8 @@ import { FAQ } from './pages/FAQ';
 import { KnowledgeBase } from './pages/KnowledgeBase';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsConditions } from './pages/TermsConditions';
+import { CancellationRefundPolicy } from './pages/CancellationRefundPolicy';
+import { MedicalDisclaimer } from './pages/MedicalDisclaimer';
 import { getDoctor } from './services/dbService';
 import { Doctor, PdcPackage, Appointment, PdcBooking } from './types';
 import { MessageCircle, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -33,6 +39,10 @@ const MainApp: React.FC = () => {
   const [activePdcPackage, setActivePdcPackage] = useState<PdcPackage | null>(null);
   const [doctor, setDoctor] = useState<Doctor | null>(null);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+  const [isStoreModalOpen, setIsStoreModalOpen] = useState(false);
+  const [selectedCategoryForBooking, setSelectedCategoryForBooking] = useState<string>(
+    'General Health & Wellness'
+  );
 
   // Success Confirmation Modal
   const [confirmedBooking, setConfirmedBooking] = useState<{
@@ -59,6 +69,13 @@ const MainApp: React.FC = () => {
   const handleNavigate = (tab: string, params?: any) => {
     if (params?.packageId) {
       setSelectedPdcPackageId(params.packageId);
+    }
+    if (params?.category) {
+      setSelectedCategoryForBooking(params.category);
+    }
+    if (tab === 'store') {
+      setIsStoreModalOpen(true);
+      return;
     }
     setCurrentTab(tab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -93,7 +110,7 @@ const MainApp: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#0C281B] selection:bg-[#E06D53]/20 selection:text-[#0C281B]">
+    <div className="min-h-screen flex flex-col bg-[#FFFCF7] text-[#25352E] selection:bg-[#F17C70]/20 selection:text-[#245B45]">
       {/* Top Navigation */}
       <Navbar
         currentTab={currentTab}
@@ -107,22 +124,65 @@ const MainApp: React.FC = () => {
           <Home
             onNavigate={handleNavigate}
             onOpenBooking={() => handleNavigate('book-appointment')}
-            onSelectPdcPackage={handleSelectPdcPackage}
+            onOpenStore={() => setIsStoreModalOpen(true)}
+            doctor={doctor}
+          />
+        )}
+
+        {currentTab === 'fertility-care' && (
+          <FertilityCare
+            doctor={doctor}
+            onOpenBooking={() =>
+              handleNavigate('book-appointment', { category: 'Fertility & Preconception' })
+            }
+          />
+        )}
+
+        {currentTab === 'pregnancy-care' && (
+          <PregnancyCare
+            doctor={doctor}
+            onOpenBooking={() =>
+              handleNavigate('book-appointment', { category: 'Pregnancy-Related Guidance' })
+            }
+          />
+        )}
+
+        {currentTab === 'postnatal-care' && (
+          <PostnatalCare
+            onOpenBooking={() =>
+              handleNavigate('book-appointment', { category: 'Postnatal & Mother–Baby Care' })
+            }
+            onSelectPdcPackage={(pkgId) => {
+              setSelectedPdcPackageId(pkgId);
+              handleNavigate('pdc-details');
+            }}
+          />
+        )}
+
+        {currentTab === 'yoga-wellness' && (
+          <YogaWellness
+            onOpenBooking={() =>
+              handleNavigate('book-appointment', { category: 'Lifestyle & Preventive Wellness' })
+            }
           />
         )}
 
         {currentTab === 'pdc' && (
-          <PostDeliveryCare
-            onNavigate={handleNavigate}
-            onSelectPdcPackage={handleSelectPdcPackage}
-            onOpenBooking={() => handleNavigate('book-appointment')}
+          <PostnatalCare
+            onOpenBooking={() =>
+              handleNavigate('book-appointment', { category: 'Postnatal & Mother–Baby Care' })
+            }
+            onSelectPdcPackage={(pkgId) => {
+              setSelectedPdcPackageId(pkgId);
+              handleNavigate('pdc-details');
+            }}
           />
         )}
 
         {currentTab === 'pdc-details' && (
           <PdcPackageDetails
             packageId={selectedPdcPackageId}
-            onBack={() => handleNavigate('pdc')}
+            onBack={() => handleNavigate('postnatal-care')}
             onBookPackage={handleSelectPdcPackage}
           />
         )}
@@ -130,7 +190,7 @@ const MainApp: React.FC = () => {
         {currentTab === 'pdc-booking' && activePdcPackage && (
           <PdcBookingFlow
             initialPackage={activePdcPackage}
-            onBack={() => handleNavigate('pdc')}
+            onBack={() => handleNavigate('postnatal-care')}
             onSuccess={handlePdcBookingSuccess}
             onNavigateLogin={() => handleNavigate('patient-login')}
           />
@@ -139,7 +199,9 @@ const MainApp: React.FC = () => {
         {currentTab === 'consultations' && (
           <Consultations
             doctor={doctor}
-            onOpenBooking={() => handleNavigate('book-appointment')}
+            onOpenBooking={(cat) =>
+              handleNavigate('book-appointment', { category: cat || 'General Health & Wellness' })
+            }
             onNavigateDoctor={() => handleNavigate('doctor')}
           />
         )}
@@ -161,6 +223,7 @@ const MainApp: React.FC = () => {
           <BookAppointment
             onSuccess={handleAppointmentSuccess}
             onBack={() => handleNavigate('home')}
+            initialCategory={selectedCategoryForBooking}
           />
         )}
 
@@ -183,7 +246,7 @@ const MainApp: React.FC = () => {
         {currentTab === 'patient-dashboard' && (
           <PatientDashboard
             onOpenBooking={() => handleNavigate('book-appointment')}
-            onExplorePdc={() => handleNavigate('pdc')}
+            onExplorePdc={() => handleNavigate('postnatal-care')}
           />
         )}
 
@@ -203,7 +266,7 @@ const MainApp: React.FC = () => {
         {currentTab === 'about' && (
           <AboutVaidyam
             onOpenBooking={() => handleNavigate('book-appointment')}
-            onExplorePdc={() => handleNavigate('pdc')}
+            onExplorePdc={() => handleNavigate('postnatal-care')}
           />
         )}
 
@@ -214,19 +277,27 @@ const MainApp: React.FC = () => {
         {currentTab === 'knowledge' && (
           <KnowledgeBase
             onOpenBooking={() => handleNavigate('book-appointment')}
-            onExplorePdc={() => handleNavigate('pdc')}
+            onExplorePdc={() => handleNavigate('postnatal-care')}
           />
         )}
 
         {currentTab === 'privacy' && <PrivacyPolicy />}
 
         {currentTab === 'terms' && <TermsConditions />}
+
+        {currentTab === 'cancellation-policy' && (
+          <CancellationRefundPolicy onBack={() => handleNavigate('home')} />
+        )}
+
+        {currentTab === 'disclaimer' && (
+          <MedicalDisclaimer onBack={() => handleNavigate('home')} />
+        )}
       </main>
 
       {/* Floating Online Enquiry Button */}
       <button
         onClick={() => handleNavigate('contact')}
-        className="fixed bottom-20 lg:bottom-6 right-5 z-40 px-4 py-3 bg-[#E06D53] hover:bg-[#C4573E] text-white rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-xs"
+        className="fixed bottom-20 lg:bottom-6 right-5 z-40 px-4 py-3 bg-[#F17C70] hover:bg-[#e0695d] text-white rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-xs"
         title="Send an Enquiry"
         aria-label="Send an Enquiry"
       >
@@ -236,39 +307,39 @@ const MainApp: React.FC = () => {
 
       {/* Booking Confirmation Dialog */}
       {confirmedBooking && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in">
-          <div className="bg-white rounded-3xl shadow-2xl border border-[#143D27]/10 w-full max-w-md overflow-hidden text-center p-8 space-y-6">
-            <div className="w-16 h-16 rounded-full bg-[#E8F5E9] text-[#2C6E49] flex items-center justify-center mx-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in">
+          <div className="bg-white rounded-3xl shadow-2xl border border-[#E4EAE4] w-full max-w-md overflow-hidden text-center p-8 space-y-6">
+            <div className="w-16 h-16 rounded-full bg-[#E8F0E8] text-[#245B45] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
             <div className="space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#2C6E49] block">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#245B45] block">
                 Booking Reference: {confirmedBooking.id}
               </span>
-              <h3 className="font-serif text-2xl font-bold text-[#0C281B]">
+              <h3 className="font-serif text-2xl font-bold text-[#25352E]">
                 {confirmedBooking.type === 'appointment'
                   ? 'Consultation Slot Reserved'
                   : 'PDC Care Enrollment Placed'}
               </h3>
-              <p className="text-xs text-[#143D27]/70 font-light">
+              <p className="text-xs text-[#69766E] font-light">
                 Registered for <strong>{confirmedBooking.patientName}</strong>. Our clinical coordinator
                 has logged this reservation into the active schedule.
               </p>
             </div>
 
-            <div className="p-4 bg-[#FAF8F5] rounded-2xl border border-[#143D27]/10 text-left text-xs space-y-2">
+            <div className="p-4 bg-[#FFFCF7] rounded-2xl border border-[#E4EAE4] text-left text-xs space-y-2">
               <div className="flex justify-between">
-                <span className="text-[#143D27]/70">Program:</span>
-                <strong className="text-[#0C281B] font-semibold">{confirmedBooking.title}</strong>
+                <span className="text-[#69766E]">Program:</span>
+                <strong className="text-[#25352E] font-semibold">{confirmedBooking.title}</strong>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#143D27]/70">Schedule:</span>
-                <strong className="text-[#0C281B] font-semibold">{confirmedBooking.date}</strong>
+                <span className="text-[#69766E]">Schedule:</span>
+                <strong className="text-[#25352E] font-semibold">{confirmedBooking.date}</strong>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#143D27]/70">Total Fee:</span>
-                <strong className="text-[#0C281B] font-semibold">
+                <span className="text-[#69766E]">Total Fee:</span>
+                <strong className="text-[#25352E] font-semibold">
                   ₹{confirmedBooking.fee.toLocaleString('en-IN')}
                 </strong>
               </div>
@@ -282,7 +353,7 @@ const MainApp: React.FC = () => {
                     userProfile?.role === 'admin' ? 'admin-dashboard' : 'patient-dashboard'
                   );
                 }}
-                className="w-full py-3.5 bg-[#E06D53] hover:bg-[#C4573E] text-white rounded-xl text-xs font-semibold shadow transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 bg-[#245B45] hover:bg-[#1b4634] text-white rounded-xl text-xs font-semibold shadow transition-all flex items-center justify-center gap-2"
               >
                 <span>View in Dashboard</span>
                 <ArrowRight className="w-4 h-4" />
@@ -290,7 +361,7 @@ const MainApp: React.FC = () => {
 
               <button
                 onClick={() => setConfirmedBooking(null)}
-                className="w-full py-2 text-xs font-medium text-[#143D27]/70 hover:text-black"
+                className="w-full py-2 text-xs font-medium text-[#69766E] hover:text-[#25352E]"
               >
                 Return to Home
               </button>
@@ -298,6 +369,12 @@ const MainApp: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Shopify Store Modal */}
+      <ShopifyStoreModal
+        isOpen={isStoreModalOpen}
+        onClose={() => setIsStoreModalOpen(false)}
+      />
 
       {/* Notifications Drawer */}
       <NotificationsModal
@@ -316,7 +393,10 @@ const MainApp: React.FC = () => {
       />
 
       {/* Global Footer */}
-      <Footer setCurrentTab={(tab) => handleNavigate(tab)} />
+      <Footer
+        setCurrentTab={(tab) => handleNavigate(tab)}
+        onOpenStore={() => setIsStoreModalOpen(true)}
+      />
     </div>
   );
 };

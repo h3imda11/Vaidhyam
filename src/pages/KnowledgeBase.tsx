@@ -131,7 +131,7 @@ export const KnowledgeBase: React.FC<KnowledgeBaseProps> = ({
             <span>Ayurvedic Clinical Knowledge Base</span>
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#0B3D2E]">
-            Ancient Wisdom. Evidence-Guided Health.
+            Evidence-Guided Ayurvedic Health & Wellness
           </h1>
           <p className="text-sm sm:text-base text-[#123C31]/80 leading-relaxed font-light">
             Searchable clinical articles, postpartum recovery tips, classical botanical guides, and

@@ -271,8 +271,8 @@ export const SEED_AVAILABILITY: AvailabilityConfig = {
 
 export const SEED_SETTINGS: ClinicSettings = {
   id: 'general',
-  businessName: 'VAIDHYAM',
-  tagline: 'Ancient Wisdom. Personal Healing.',
+  businessName: 'Vaidhyam',
+  tagline: 'The Care You Deserve',
   phone: '',
   whatsapp: '',
   email: '',

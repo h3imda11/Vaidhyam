@@ -166,7 +166,7 @@ export const VaidhyamRealisticLogo: React.FC<{
     >
       <img
         src={VAIDHYAM_BRAND_LOGO_IMAGE}
-        alt="VAIDHYAM — Ancient Wisdom. Personal Healing."
+        alt="Vaidhyam — The Care You Deserve"
         className={`${sizeMap} object-contain transition-transform duration-300 hover:scale-105`}
         loading="eager"
       />
@@ -176,11 +176,8 @@ export const VaidhyamRealisticLogo: React.FC<{
 
 /**
  * Main VAIDHYAM Brand Logo Component
- * Meets all exact branding requirements:
- * - Emblem: Symmetrical V with human-healing silhouette & leaves, gold sun orb, herbal bowl
- * - Wordmark: “VAIDHYAM” in uppercase luxury serif typography with generous letter spacing
- * - Tagline: “Ancient Wisdom. Personal Healing.” in clean modern sans-serif with thin gold horizontal lines
- * - Palette: #164A3A (Deep Forest Green), #6F963F (Herbal Green), #C7A45A (Muted Gold), #F8F6EF (Warm Ivory)
+ * - Wordmark: “VAIDHYAM” in uppercase luxury serif typography
+ * - Tagline: “The Care You Deserve” in clean modern sans-serif
  */
 export const Logo: React.FC<LogoProps> = ({
   className = '',
@@ -231,7 +228,7 @@ export const Logo: React.FC<LogoProps> = ({
   }[size];
 
   // Exact Brand Colors
-  const deepForestGreen = isLight ? '#F8F6EF' : '#164A3A';
+  const deepForestGreen = isLight ? '#FFFCF7' : '#245B45';
   const mutedGold = '#C7A45A';
 
   return (
@@ -271,14 +268,14 @@ export const Logo: React.FC<LogoProps> = ({
           </span>
         </div>
 
-        {/* TAGLINE: Ancient Wisdom. Personal Healing. */}
+        {/* TAGLINE: The Care You Deserve */}
         {showSubtitle && (
           <div
             className={`flex items-center gap-2 mt-1.5 ${
               layout === 'stacked' ? 'justify-center' : ''
             }`}
           >
-            {/* Left Thin Muted-Gold Accent Line */}
+            {/* Left Thin Accent Line */}
             <span
               className={`h-[1px] ${sizes.line} inline-block flex-shrink-0`}
               style={{ backgroundColor: mutedGold }}
@@ -288,15 +285,15 @@ export const Logo: React.FC<LogoProps> = ({
             <span
               className={`font-sans font-medium uppercase ${sizes.tagline} whitespace-nowrap`}
               style={{
-                color: deepForestGreen,
+                color: isLight ? '#E8F0E8' : '#69766E',
                 fontFamily: "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
                 letterSpacing: '0.14em',
               }}
             >
-              Ancient Wisdom. Personal Healing.
+              The Care You Deserve
             </span>
 
-            {/* Right Thin Muted-Gold Accent Line */}
+            {/* Right Thin Accent Line */}
             <span
               className={`h-[1px] ${sizes.line} inline-block flex-shrink-0`}
               style={{ backgroundColor: mutedGold }}

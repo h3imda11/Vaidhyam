@@ -1,106 +1,108 @@
 import React from 'react';
 import { Logo } from '../common/Logo';
-import { Phone, Mail, MapPin, Clock, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ShieldCheck, ShoppingBag, ArrowRight } from 'lucide-react';
 
 interface FooterProps {
   setCurrentTab: (tab: string) => void;
+  onOpenStore?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ setCurrentTab }) => {
+export const Footer: React.FC<FooterProps> = ({ setCurrentTab, onOpenStore }) => {
   const handleNav = (tabId: string) => {
     setCurrentTab(tabId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-[#0C281B] text-[#FAF8F5] pt-16 pb-24 lg:pb-16 border-t border-[#143D27]">
+    <footer className="bg-[#1b4634] text-[#FFFCF7] pt-16 pb-24 lg:pb-16 border-t border-[#245B45]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-white/10">
-          {/* Brand & Philosophy */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-white/10 text-left">
+          {/* Brand & Introduction */}
           <div className="lg:col-span-2 space-y-4">
-            <Logo variant="light" size="lg" />
-            <p className="text-sm text-[#FAF8F5]/80 max-w-sm leading-relaxed font-light">
-              Authentic Kerala Ayurvedic healthcare and specialized post-delivery care
-              (Sutika Paricharya). Rooted in Ashtanga Hridaya, personalized for modern
-              motherhood and holistic well-being.
+            <button
+              onClick={() => handleNav('home')}
+              className="text-left focus:outline-none"
+            >
+              <Logo variant="light" size="lg" />
+            </button>
+            <p className="text-sm text-[#FFFCF7]/80 max-w-sm leading-relaxed font-light">
+              Personalised Ayurvedic healthcare and dedicated consultations for fertility, pregnancy, postpartum recovery, yoga and everyday health. The care you deserve at every stage of life.
             </p>
-            <div className="flex items-center gap-2 pt-2 text-xs text-[#FAF8F5]/60">
-              <ShieldCheck className="w-4 h-4 text-[#C29B38]" />
-              <span>Certified Ayurvedic Clinical Practice • Reg No. TRA-AYU-84920</span>
+            <div className="flex items-center gap-2 pt-2 text-xs text-[#FFFCF7]/70">
+              <ShieldCheck className="w-4 h-4 text-[#F17C70]" />
+              <span>Licensed Ayurvedic Healthcare Practice</span>
             </div>
           </div>
 
-          {/* Core Services */}
+          {/* Care Services */}
           <div>
             <h4 className="font-serif text-lg font-semibold text-white tracking-wide mb-4">
-              Care Programs
+              Care Services
             </h4>
-            <ul className="space-y-2.5 text-sm text-[#FAF8F5]/80">
+            <ul className="space-y-2.5 text-sm text-[#FFFCF7]/80">
               <li>
                 <button
-                  onClick={() => handleNav('pdc')}
-                  className="hover:text-[#E06D53] transition-colors text-left flex items-center gap-1.5"
+                  onClick={() => handleNav('fertility-care')}
+                  className="hover:text-[#F17C70] transition-colors text-left"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E06D53]" />
-                  Post-Delivery Care (PDC)
+                  Fertility Care
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNav('pdc')}
-                  className="hover:text-white transition-colors text-left"
+                  onClick={() => handleNav('pregnancy-care')}
+                  className="hover:text-[#F17C70] transition-colors text-left"
                 >
-                  7 to 42 Days Prasava Raksha
+                  Pregnancy Care
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav('postnatal-care')}
+                  className="hover:text-[#F17C70] transition-colors text-left"
+                >
+                  Postnatal & Baby Care
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav('yoga-wellness')}
+                  className="hover:text-[#F17C70] transition-colors text-left"
+                >
+                  Yoga & Wellness
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleNav('consultations')}
-                  className="hover:text-white transition-colors text-left"
+                  className="hover:text-[#F17C70] transition-colors text-left font-medium text-white"
                 >
-                  Doctor Consultations (Online & In-Clinic)
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNav('treatments')}
-                  className="hover:text-white transition-colors text-left"
-                >
-                  Panchakarma & Abhyanga Therapies
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNav('treatments')}
-                  className="hover:text-white transition-colors text-left"
-                >
-                  Women\'s Hormonal Wellness
+                  Ayurvedic Consultation
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Quick Navigation */}
+          {/* About & Resources */}
           <div>
             <h4 className="font-serif text-lg font-semibold text-white tracking-wide mb-4">
-              Vaidyam Sanctuary
+              Explore Vaidhyam
             </h4>
-            <ul className="space-y-2.5 text-sm text-[#FAF8F5]/80">
+            <ul className="space-y-2.5 text-sm text-[#FFFCF7]/80">
               <li>
                 <button
                   onClick={() => handleNav('about')}
                   className="hover:text-white transition-colors text-left"
                 >
-                  About Our Philosophy
+                  About Us & Philosophy
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNav('knowledge')}
-                  className="hover:text-white transition-colors text-left flex items-center gap-1.5 text-[#C29B38]"
+                  onClick={() => handleNav('doctor')}
+                  className="hover:text-white transition-colors text-left"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C29B38]" />
-                  Knowledge Base & Health Tips
+                  Meet Our Practitioner
                 </button>
               </li>
               <li>
@@ -112,58 +114,67 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab }) => {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleNav('contact')}
-                  className="hover:text-white transition-colors text-left"
-                >
-                  Online Contact & Enquiries
-                </button>
+                {onOpenStore ? (
+                  <button
+                    onClick={onOpenStore}
+                    className="hover:text-[#F17C70] transition-colors text-left flex items-center gap-1.5"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 text-[#F17C70]" />
+                    <span>Wellness Store</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => handleNav('store')}
+                    className="hover:text-[#F17C70] transition-colors text-left flex items-center gap-1.5"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 text-[#F17C70]" />
+                    <span>Wellness Store</span>
+                  </button>
+                )}
               </li>
               <li>
                 <button
                   onClick={() => handleNav('admin-login')}
-                  className="text-xs text-[#FAF8F5]/50 hover:text-[#C29B38] transition-colors text-left pt-2 flex items-center gap-1"
+                  className="text-xs text-[#FFFCF7]/50 hover:text-white transition-colors text-left pt-1"
                 >
-                  Admin Portal
+                  Practitioner Login
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Care & Enquiries */}
+          {/* Bookings & Contact */}
           <div>
             <h4 className="font-serif text-lg font-semibold text-white tracking-wide mb-4">
-              Care & Inquiries
+              Appointments
             </h4>
-            <ul className="space-y-3 text-xs text-[#FAF8F5]/80">
-              <li className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-[#4C956C] flex-shrink-0 mt-0.5" />
+            <ul className="space-y-3 text-xs text-[#FFFCF7]/80">
+              <li className="flex items-start gap-2">
+                <Clock className="w-4 h-4 text-[#F17C70] flex-shrink-0 mt-0.5" />
                 <span>Mon – Sat: 9:00 AM – 5:00 PM (IST)</span>
               </li>
-              <li className="text-[11px] text-[#FAF8F5]/60 leading-relaxed pt-1">
-                Sanctuary telephone lines and location details are being updated. Submit your enquiry online for fast assistance.
+              <li className="text-[11px] text-[#FFFCF7]/70 leading-relaxed">
+                Connect for online video, direct audio callbacks, or clinic appointments.
               </li>
               <li className="pt-2">
                 <button
-                  onClick={() => handleNav('contact')}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E06D53] hover:bg-[#C4573E] text-white font-medium text-xs transition-colors"
+                  onClick={() => handleNav('book-appointment')}
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#F17C70] hover:bg-[#e0695d] text-white font-medium text-xs transition-colors shadow-xs"
                 >
-                  <span>Submit Enquiry Message</span>
+                  <span>Book an Appointment</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Ethical Medical Disclaimer & Copyright */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#FAF8F5]/60">
-          <p className="max-w-2xl leading-relaxed">
-            <strong>Medical Notice:</strong> VAIDHYAM provides authentic classical Ayurvedic consultations,
-            post-delivery care therapies, and individualized herbal lifestyle regimens. Our therapies are designed
-            to support natural maternal rejuvenation and systemic balance; they are not intended to replace emergency
-            obstetric or hospital allopathic interventions.
+        {/* Ethical Medical Disclaimer & Policies */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#FFFCF7]/60 text-left">
+          <p className="max-w-2xl leading-relaxed text-[11px]">
+            <strong>Medical Disclaimer:</strong> Vaidhyam provides personalized Ayurvedic healthcare consultations and supportive wellness guidance based on individual clinical assessments. Ayurvedic recommendations are not intended to replace emergency obstetric or acute hospital care.
           </p>
-          <div className="flex items-center gap-4 flex-shrink-0">
+          <div className="flex flex-wrap items-center gap-3 text-xs flex-shrink-0">
             <button
               onClick={() => handleNav('privacy')}
               className="hover:text-white transition-colors"
@@ -177,11 +188,25 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab }) => {
             >
               Terms & Conditions
             </button>
+            <span>•</span>
+            <button
+              onClick={() => handleNav('cancellation-policy')}
+              className="hover:text-white transition-colors"
+            >
+              Cancellation & Refund Policy
+            </button>
+            <span>•</span>
+            <button
+              onClick={() => handleNav('disclaimer')}
+              className="hover:text-white transition-colors"
+            >
+              Medical Disclaimer
+            </button>
           </div>
         </div>
 
-        <div className="mt-6 text-center text-[11px] text-[#FAF8F5]/40">
-          © {new Date().getFullYear()} VAIDHYAM — Ancient Wisdom. Personal Healing. All rights reserved.
+        <div className="mt-6 text-center text-[11px] text-[#FFFCF7]/40">
+          © {new Date().getFullYear()} Vaidhyam — The Care You Deserve. All rights reserved.
         </div>
       </div>
     </footer>

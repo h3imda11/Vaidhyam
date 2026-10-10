@@ -28,11 +28,13 @@ import { BookingStepper } from '../components/booking/BookingStepper';
 interface BookAppointmentProps {
   onSuccess: (appointment: Appointment) => void;
   onBack?: () => void;
+  initialCategory?: string;
 }
 
 export const BookAppointment: React.FC<BookAppointmentProps> = ({
   onSuccess,
   onBack,
+  initialCategory = 'General Health & Wellness',
 }) => {
   const { userProfile } = useAuth();
   const [doctor, setDoctor] = useState<Doctor | null>(null);
@@ -43,6 +45,7 @@ export const BookAppointment: React.FC<BookAppointmentProps> = ({
   const [maxReachedStep, setMaxReachedStep] = useState<number>(1);
 
   // Form State
+  const [consultationCategory, setConsultationCategory] = useState<string>(initialCategory);
   const [appointmentType, setAppointmentType] = useState<AppointmentType>('video');
   const [selectedDate, setSelectedDate] = useState<string>(() => {
     // Default tomorrow or next day
@@ -275,22 +278,67 @@ export const BookAppointment: React.FC<BookAppointmentProps> = ({
             {/* STEP 1: SELECT TIME & MODE */}
             {currentStep === 1 && (
               <div className="space-y-6 animate-in fade-in duration-300">
-                <div className="border-b border-[#143D27]/10 pb-4">
-                  <span className="text-[11px] font-bold text-[#2C6E49] uppercase tracking-wider block">
+                <div className="border-b border-[#E4EAE4] pb-4">
+                  <span className="text-[11px] font-bold text-[#245B45] uppercase tracking-wider block">
                     Step 1 of 3
                   </span>
-                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#0C281B]">
-                    Select Consultation Mode & Schedule
+                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#25352E]">
+                    Select Category, Practitioner & Schedule
                   </h2>
-                  <p className="text-xs text-[#143D27]/70 mt-1">
-                    Choose your consultation medium, preferred day, and an available 30-minute slot.
+                  <p className="text-xs text-[#69766E] mt-1">
+                    Choose your healthcare category, attending practitioner, consultation format, and date.
                   </p>
                 </div>
 
-                {/* 1. Select Consultation Mode */}
-                <div className="space-y-3">
-                  <label className="text-xs font-bold text-[#143D27] uppercase tracking-wider block">
-                    1. Consultation Mode
+                {/* 1. Select Consultation Category */}
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-[#25352E] uppercase tracking-wider block">
+                    1. Consultation Category
+                  </label>
+                  <select
+                    value={consultationCategory}
+                    onChange={(e) => setConsultationCategory(e.target.value)}
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#E4EAE4] text-xs font-medium text-[#25352E] bg-[#FFFCF7] focus:outline-none focus:border-[#245B45]"
+                  >
+                    <option value="General Health & Wellness">General Health & Wellness</option>
+                    <option value="Women's Health">Women's Health</option>
+                    <option value="Men's Health">Men's Health</option>
+                    <option value="Fertility & Preconception">Fertility & Preconception</option>
+                    <option value="Pregnancy-Related Guidance">Pregnancy-Related Guidance</option>
+                    <option value="Postnatal & Mother–Baby Care">Postnatal & Mother–Baby Care</option>
+                    <option value="Lifestyle & Preventive Wellness">Lifestyle & Preventive Wellness</option>
+                  </select>
+                </div>
+
+                {/* 2. Attending Practitioner */}
+                <div className="space-y-2 pt-1">
+                  <label className="text-xs font-bold text-[#25352E] uppercase tracking-wider block">
+                    2. Attending Practitioner
+                  </label>
+                  <div className="p-3.5 rounded-2xl bg-[#E8F0E8]/50 border border-[#245B45]/20 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-full bg-[#245B45] text-white flex items-center justify-center font-serif font-bold text-sm">
+                        V
+                      </div>
+                      <div>
+                        <h4 className="font-serif text-sm font-bold text-[#245B45]">
+                          {doctor?.name || 'Ayurvedic Physician'}
+                        </h4>
+                        <p className="text-[11px] text-[#69766E]">
+                          {doctor?.qualification || 'BAMS, MD (Ayu)'} · Verified Healthcare Provider
+                        </p>
+                      </div>
+                    </div>
+                    <span className="text-xs font-bold text-[#F17C70]">
+                      ₹{doctor?.consultationFee || 850}
+                    </span>
+                  </div>
+                </div>
+
+                {/* 3. Select Consultation Format */}
+                <div className="space-y-3 pt-1">
+                  <label className="text-xs font-bold text-[#25352E] uppercase tracking-wider block">
+                    3. Consultation Format
                   </label>
                   <div className="grid grid-cols-3 gap-3">
                     <button

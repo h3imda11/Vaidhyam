@@ -9,13 +9,17 @@ import {
   ShieldCheck,
   UserCheck,
   ArrowRight,
-  FileText
+  Sparkles,
+  Heart,
+  Baby,
+  Activity,
+  Smile
 } from 'lucide-react';
 import { Doctor } from '../types';
 
 interface ConsultationsProps {
   doctor: Doctor | null;
-  onOpenBooking: () => void;
+  onOpenBooking: (category?: string) => void;
   onNavigateDoctor: () => void;
 }
 
@@ -24,170 +28,233 @@ export const Consultations: React.FC<ConsultationsProps> = ({
   onOpenBooking,
   onNavigateDoctor,
 }) => {
+  const consultationCategories = [
+    {
+      id: 'general-health',
+      name: 'General Health & Wellness',
+      desc: 'Digestive fire (Agni) restoration, chronic fatigue, acidity, metabolic rejuvenation, and seasonal detoxification.',
+      icon: Activity,
+    },
+    {
+      id: 'womens-health',
+      name: 'Women’s Health',
+      desc: 'Menstrual rhythm, PCOS, hormonal fluctuations, pelvic discomfort, and perimenopausal support.',
+      icon: Heart,
+    },
+    {
+      id: 'mens-health',
+      name: 'Men’s Health',
+      desc: 'Vitality, stress management, reproductive stamina (Shukra Dhatu), and metabolic lifestyle guidance.',
+      icon: UserCheck,
+    },
+    {
+      id: 'fertility-preconception',
+      name: 'Fertility & Preconception',
+      desc: 'Couples alignment, cellular preparation, reproductive tissue nourishment, and mindful conception planning.',
+      icon: Sparkles,
+    },
+    {
+      id: 'pregnancy-guidance',
+      name: 'Pregnancy-Related Guidance',
+      desc: 'Trimester-specific comfort, morning sickness relief, mindful breathing, and labor preparation.',
+      icon: Smile,
+    },
+    {
+      id: 'postnatal-care',
+      name: 'Postnatal & Mother–Baby Care',
+      desc: 'Sutika Paricharya mother recovery, lactation support, pelvic restoration, and gentle infant wellness.',
+      icon: Baby,
+    },
+    {
+      id: 'lifestyle-wellness',
+      name: 'Lifestyle & Preventive Wellness',
+      desc: 'Dinacharya daily routines, sleep architecture, stress relief, and personalized Ayurvedic dietary planning.',
+      icon: Clock,
+    },
+  ];
+
   return (
-    <div className="space-y-20 sm:space-y-28 pb-24 text-left">
-      {/* Hero */}
-      <section className="pt-6 sm:pt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2C6E49]/10 text-[#2C6E49] text-xs font-bold uppercase tracking-wider">
-              <UserCheck className="w-4 h-4" />
-              <span>Doctor-Led Clinical Consultations</span>
+    <div className="bg-[#FFFCF7] text-[#25352E] min-h-screen text-left">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#E8F0E8]/70 via-[#FFFCF7] to-[#FFFCF7] pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-[#E4EAE4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F0E8] text-[#245B45] text-xs font-semibold tracking-wider uppercase border border-[#245B45]/20">
+                <UserCheck className="w-3.5 h-3.5 text-[#F17C70]" />
+                <span>Doctor-Led Healthcare</span>
+              </div>
+
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#245B45] tracking-tight leading-tight">
+                Personalised Ayurvedic Consultation
+              </h1>
+
+              <p className="text-lg sm:text-xl text-[#69766E] font-light leading-relaxed">
+                Discuss your health concerns with a qualified Ayurvedic practitioner and receive guidance based on your individual needs.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <button
+                  onClick={() => onOpenBooking()}
+                  className="bg-[#F17C70] hover:bg-[#e0695d] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow flex items-center gap-2 group"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book an Appointment</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </button>
+
+                <button
+                  onClick={onNavigateDoctor}
+                  className="bg-white hover:bg-[#E8F0E8]/40 text-[#245B45] border border-[#E4EAE4] px-6 py-3.5 rounded-xl font-medium text-sm transition-all flex items-center gap-2"
+                >
+                  <span>Meet Practitioner</span>
+                </button>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-[#E4EAE4] text-xs text-[#69766E] flex items-center gap-3">
+                <ShieldCheck className="w-4 h-4 text-[#34765A] flex-shrink-0" />
+                <span>Available via Video, Voice callback, and In-person clinical sanctuary appointments.</span>
+              </div>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#0C281B] font-bold leading-tight">
-              Personalized Ayurvedic Clinical Consultations
-            </h1>
-
-            <p className="text-base sm:text-lg text-[#143D27]/80 leading-relaxed font-light max-w-2xl">
-              Connect with our senior Ayurvedic physician for in-depth health evaluations. Whether you
-              are seeking postpartum recovery protocols, digestive restoration, or hormonal balance,
-              our clinical sessions combine traditional diagnostic insight with modern lifestyle guidance.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button
-                onClick={onOpenBooking}
-                className="inline-flex items-center gap-2 bg-[#E06D53] hover:bg-[#C4573E] text-white px-7 py-4 rounded-2xl font-semibold shadow-md transition-all text-sm"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book Doctor Appointment</span>
-              </button>
-
-              <button
-                onClick={onNavigateDoctor}
-                className="inline-flex items-center gap-2 bg-white hover:bg-[#F4EFE6] text-[#0C281B] px-6 py-4 rounded-2xl border border-[#143D27]/20 font-semibold shadow-sm transition-all text-sm"
-              >
-                <span>View Physician Credentials</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <div className="lg:col-span-5">
+              <div className="relative rounded-3xl overflow-hidden border border-[#E4EAE4] shadow-md bg-white">
+                <img
+                  src={doctor?.photoUrl || '/src/assets/images/vaidyam_doctor_consult_1791354460579.jpg'}
+                  alt="Doctor consultation"
+                  className="w-full h-80 sm:h-96 object-cover"
+                />
+                <div className="p-5 bg-white/95 backdrop-blur-xs border-t border-[#E4EAE4] space-y-1">
+                  <h3 className="font-serif text-lg font-bold text-[#245B45]">
+                    Physician-Guided Care
+                  </h3>
+                  <p className="text-xs text-[#69766E]">
+                    BAMS, MD (Ayu) · Direct one-on-one evaluations with tailored lifestyle prescriptions.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="lg:col-span-5">
-            <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-              <img
-                src={doctor?.photoUrl || '/src/assets/images/vaidyam_doctor_consult_1791354460579.jpg'}
-                alt="Ayurvedic Doctor Consultation"
-                className="w-full h-[400px] object-cover"
-              />
-            </div>
-          </div>
+      {/* 7 CONSULTATION CATEGORIES */}
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
+        <div className="space-y-4 mb-12">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+            Clinical Disciplines
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
+            Consultation Categories
+          </h2>
+          <p className="text-[#69766E] text-sm sm:text-base max-w-2xl font-light">
+            Select a specialized focus area for your clinical assessment:
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {consultationCategories.map((cat) => {
+            const Icon = cat.icon;
+            return (
+              <div
+                key={cat.id}
+                className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E4EAE4] hover:border-[#34765A]/40 transition-all duration-300 shadow-xs hover:shadow-md space-y-4 flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#E8F0E8] text-[#245B45] flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-[#34765A]" />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold text-[#245B45]">
+                    {cat.name}
+                  </h3>
+                  <p className="text-xs text-[#69766E] leading-relaxed">
+                    {cat.desc}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-[#E4EAE4] flex items-center justify-between">
+                  <button
+                    onClick={() => onOpenBooking(cat.name)}
+                    className="text-xs font-semibold text-[#245B45] hover:text-[#34765A] flex items-center gap-1.5 transition-colors"
+                  >
+                    <span>Select Category</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                  <span className="text-[11px] text-[#69766E]">
+                    ₹850
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
       {/* THREE MODES */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E4EAE4]">
         <div className="text-center max-w-2xl mx-auto space-y-2 mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#2C6E49]">
-            Flexible Healthcare Access
+          <span className="text-xs font-bold uppercase tracking-wider text-[#F17C70]">
+            Accessible Care
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0C281B]">
-            Three Ways to Consult
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#245B45]">
+            Consultation Formats
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-8 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#2C6E49]/10 text-[#2C6E49] flex items-center justify-center">
-              <Video className="w-6 h-6" />
-            </div>
-            <h3 className="font-serif text-2xl font-bold text-[#0C281B]">Online Video Call</h3>
-            <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-              High-definition tele-consultation allowing visual examination of tongue, skin, and
-              maternal posture from the comfort of your home anywhere in India or internationally.
+          <div className="p-7 rounded-2xl bg-white border border-[#E4EAE4] space-y-3">
+            <Video className="w-6 h-6 text-[#34765A]" />
+            <h3 className="font-serif text-xl font-bold text-[#245B45]">
+              Online Video Consultation
+            </h3>
+            <p className="text-xs text-[#69766E] leading-relaxed">
+              Encrypted, high-definition tele-consultation allowing visual examination of tongue, skin, and posture from home.
             </p>
-            <div className="pt-2 text-xs text-[#2C6E49] font-semibold">
-              30 Mins • Digital Prescription Provided
-            </div>
           </div>
 
-          <div className="p-8 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#2C6E49]/10 text-[#2C6E49] flex items-center justify-center">
-              <Phone className="w-6 h-6" />
-            </div>
-            <h3 className="font-serif text-2xl font-bold text-[#0C281B]">Audio Consultation</h3>
-            <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-              Direct telephone conversation with our qualified Ayurvedic physician for preliminary symptoms review,
-              ongoing treatment follow-ups, or medication guidance.
+          <div className="p-7 rounded-2xl bg-white border border-[#E4EAE4] space-y-3">
+            <Phone className="w-6 h-6 text-[#34765A]" />
+            <h3 className="font-serif text-xl font-bold text-[#245B45]">
+              Direct Audio Callback
+            </h3>
+            <p className="text-xs text-[#69766E] leading-relaxed">
+              Senior doctor calls your registered telephone number at the reserved time for convenient consultation.
             </p>
-            <div className="pt-2 text-xs text-[#2C6E49] font-semibold">
-              30 Mins • Direct Doctor Callback
-            </div>
           </div>
 
-          <div className="p-8 rounded-3xl bg-white border border-[#143D27]/10 shadow-sm space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#E06D53]/10 text-[#C4573E] flex items-center justify-center">
-              <Building className="w-6 h-6" />
-            </div>
-            <h3 className="font-serif text-2xl font-bold text-[#0C281B]">In-Clinic Consultation</h3>
-            <p className="text-xs text-[#143D27]/80 leading-relaxed font-light">
-              In-person consultation at our peaceful Ayurvedic sanctuary clinic.
-              Includes classical pulse evaluation (Nadi Pariksha) and postural assessment.
+          <div className="p-7 rounded-2xl bg-white border border-[#E4EAE4] space-y-3">
+            <Building className="w-6 h-6 text-[#34765A]" />
+            <h3 className="font-serif text-xl font-bold text-[#245B45]">
+              In-Clinic Sanctuary Visit
+            </h3>
+            <p className="text-xs text-[#69766E] leading-relaxed">
+              Personal pulse evaluation (Nadi Pariksha) and physical assessment at our clinical sanctuary.
             </p>
-            <div className="pt-2 text-xs text-[#C4573E] font-semibold">
-              45 Mins • Physical Nadi Pariksha
-            </div>
           </div>
         </div>
       </section>
 
-      {/* WHAT TO EXPECT DURING CONSULTATION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-[#0C281B] text-white space-y-8">
-          <div className="max-w-2xl space-y-2">
-            <span className="text-xs uppercase tracking-widest text-[#C29B38] font-bold">
-              Clinical Methodology
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold">
-              What to Expect in Your Session
-            </h2>
+      {/* Practitioner Preview Card */}
+      <section className="py-16 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white p-8 rounded-3xl border border-[#E4EAE4] shadow-xs text-center space-y-4">
+          <div className="w-20 h-20 rounded-full bg-[#E8F0E8] text-[#245B45] font-serif font-bold text-3xl flex items-center justify-center mx-auto">
+            V
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="space-y-2">
-              <span className="text-xl font-serif font-bold text-[#E06D53]">01</span>
-              <h4 className="font-serif text-lg font-bold">Prakriti & Dosha Review</h4>
-              <p className="text-xs text-white/70 leading-relaxed">
-                Evaluating your baseline physical constitution and identifying current Vata, Pitta, or
-                Kapha imbalances.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <span className="text-xl font-serif font-bold text-[#E06D53]">02</span>
-              <h4 className="font-serif text-lg font-bold">Maternal / Health History</h4>
-              <p className="text-xs text-white/70 leading-relaxed">
-                Reviewing delivery notes, sleep cycles, digestion, lactation indicators, and any existing
-                allopathic medications.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <span className="text-xl font-serif font-bold text-[#E06D53]">03</span>
-              <h4 className="font-serif text-lg font-bold">Therapy Recommendation</h4>
-              <p className="text-xs text-white/70 leading-relaxed">
-                Determining which external therapies (Abhyanga, Kashaya Dhara, Nadi Sweda) are clinically
-                appropriate for you.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <span className="text-xl font-serif font-bold text-[#E06D53]">04</span>
-              <h4 className="font-serif text-lg font-bold">Digital Diet & Prescription</h4>
-              <p className="text-xs text-white/70 leading-relaxed">
-                Receiving a structured digital prescription with genuine herbal formulations and daily
-                dietary advice.
-              </p>
-            </div>
+          <div className="space-y-1">
+            <h3 className="font-serif text-2xl font-bold text-[#245B45]">
+              Consult with Our Ayurvedic Physician
+            </h3>
+            <p className="text-xs text-[#69766E]">
+              BAMS, MD (Ayu) · 12+ Years Clinical Experience · Specialization in Sutika Paricharya
+            </p>
           </div>
-
-          <div className="pt-4 text-center">
-            <button
-              onClick={onOpenBooking}
-              className="inline-flex items-center gap-2 bg-[#E06D53] hover:bg-[#C4573E] text-white px-8 py-4 rounded-xl font-semibold text-sm shadow-md transition-all"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>Book Your Consultation Slot Now</span>
-            </button>
-          </div>
+          <button
+            onClick={() => onOpenBooking()}
+            className="inline-flex items-center gap-2 bg-[#F17C70] hover:bg-[#e0695d] text-white px-7 py-3 rounded-xl text-xs font-semibold shadow-xs transition-colors"
+          >
+            <Calendar className="w-4 h-4" />
+            <span>Launch Booking Flow</span>
+          </button>
         </div>
       </section>
     </div>
