@@ -46,13 +46,15 @@ export const AdminAuth: React.FC<AdminAuthProps> = ({
   return (
     <div className="max-w-md mx-auto px-4 py-12 sm:py-20 text-left">
       <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#143D27]/10 shadow-xl space-y-6">
-        <div className="text-center space-y-3">
-          <Logo size="lg" layout="stacked" className="mx-auto" />
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0C281B] pt-1">
-            Clinical Administration Console
+        <div className="text-center space-y-2">
+          <div className="w-12 h-12 rounded-2xl bg-[#0C281B] text-white flex items-center justify-center mx-auto shadow-md">
+            <ShieldCheck className="w-6 h-6 text-[#C29B38]" />
+          </div>
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0C281B] pt-2">
+            Vaidyam Admin Portal
           </h2>
           <p className="text-xs text-[#143D27]/70">
-            Appointments, doctor schedules, dynamic PDC package pricing & live database oversight
+            Clinical management, appointment schedules, package pricing & live database oversight
           </p>
         </div>
 

@@ -63,14 +63,14 @@ export const PatientAuth: React.FC<PatientAuthProps> = ({
       <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#143D27]/10 shadow-lg space-y-6">
         {/* Logo & Header */}
         <div className="text-center space-y-2">
-          <Logo size="lg" layout="stacked" className="mx-auto" />
+          <Logo size="md" className="mx-auto" />
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0C281B] pt-2">
             {mode === 'login' ? 'Patient Portal Sign In' : 'Create Patient Account'}
           </h2>
           <p className="text-xs text-[#143D27]/70">
             {mode === 'login'
-              ? 'Access your consultation schedules and clinical care tracking'
-              : 'Register for advanced clinical healthcare and bookings'}
+              ? 'Access your consultation schedules and PDC care tracking'
+              : 'Register for personalized Ayurvedic healthcare and bookings'}
           </p>
         </div>
 

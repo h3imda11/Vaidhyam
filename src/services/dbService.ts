@@ -24,16 +24,14 @@ import {
   ClinicSettings,
   AppointmentStatus,
   PdcBookingStatus,
-  PaymentStatus,
-  KnowledgeArticle
+  PaymentStatus
 } from '../types';
 import {
   SEED_DOCTOR,
   SEED_PDC_PACKAGES,
   SEED_TREATMENTS,
   SEED_AVAILABILITY,
-  SEED_SETTINGS,
-  SEED_KNOWLEDGE_ARTICLES
+  SEED_SETTINGS
 } from '../data/seedData';
 
 // Fallback in-memory / local storage caches to guarantee resilience
@@ -45,7 +43,6 @@ const LOCAL_STORAGE_KEYS = {
   SETTINGS: 'vaidyam_local_settings',
   NOTIFICATIONS: 'vaidyam_local_notifications',
   ENQUIRIES: 'vaidyam_local_enquiries',
-  KNOWLEDGE_BASE: 'vaidyam_local_knowledge_base',
 };
 
 function getLocal<T>(key: string, defaultVal: T): T {
@@ -70,13 +67,19 @@ function setLocal<T>(key: string, val: T): void {
  */
 export async function initDatabase(): Promise<void> {
   try {
-    // Check settings - ensure contact details and address are cleared
+    // Check settings
     const settingsRef = doc(db, 'settings', 'general');
-    await setDoc(settingsRef, SEED_SETTINGS, { merge: true });
+    const settingsSnap = await getDoc(settingsRef);
+    if (!settingsSnap.exists()) {
+      await setDoc(settingsRef, SEED_SETTINGS);
+    }
 
-    // Seed Doctor - ensure doctor personal name and details are removed
+    // Seed Doctor
     const doctorRef = doc(db, 'doctors', SEED_DOCTOR.id);
-    await setDoc(doctorRef, SEED_DOCTOR, { merge: true });
+    const doctorSnap = await getDoc(doctorRef);
+    if (!doctorSnap.exists()) {
+      await setDoc(doctorRef, SEED_DOCTOR);
+    }
 
     // Seed Availability
     const availRef = doc(db, 'availability', SEED_AVAILABILITY.doctorId);
@@ -100,15 +103,6 @@ export async function initDatabase(): Promise<void> {
       const snap = await getDoc(treatRef);
       if (!snap.exists()) {
         await setDoc(treatRef, treat);
-      }
-    }
-
-    // Seed Knowledge Base Articles
-    for (const article of SEED_KNOWLEDGE_ARTICLES) {
-      const artRef = doc(db, 'knowledge_base', article.id);
-      const snap = await getDoc(artRef);
-      if (!snap.exists()) {
-        await setDoc(artRef, article);
       }
     }
   } catch (error) {
@@ -781,107 +775,3 @@ export async function updateClinicSettings(updates: Partial<ClinicSettings>): Pr
   const current = getLocal<ClinicSettings>(LOCAL_STORAGE_KEYS.SETTINGS, SEED_SETTINGS);
   setLocal(LOCAL_STORAGE_KEYS.SETTINGS, { ...current, ...updates });
 }
-
-// ========================
-// KNOWLEDGE BASE (ARTICLES & HEALTH TIPS)
-// ========================
-export async function getKnowledgeArticles(): Promise<KnowledgeArticle[]> {
-  try {
-    const snap = await getDocs(collection(db, 'knowledge_base'));
-    if (!snap.empty) {
-      const list = snap.docs.map((d) => d.data() as KnowledgeArticle);
-      return list.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-    }
-  } catch (err) {
-    console.warn('Fallback to local knowledge articles:', err);
-  }
-
-  const local = getLocal<KnowledgeArticle[]>(
-    LOCAL_STORAGE_KEYS.KNOWLEDGE_BASE,
-    SEED_KNOWLEDGE_ARTICLES
-  );
-  return local.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-}
-
-export async function getKnowledgeArticleBySlug(slug: string): Promise<KnowledgeArticle | null> {
-  const all = await getKnowledgeArticles();
-  return all.find((a) => a.slug === slug || a.id === slug) || null;
-}
-
-export async function voteHelpfulArticle(id: string): Promise<number> {
-  let updatedCount = 0;
-  try {
-    const ref = doc(db, 'knowledge_base', id);
-    const snap = await getDoc(ref);
-    if (snap.exists()) {
-      const cur = (snap.data() as KnowledgeArticle).helpfulCount || 0;
-      updatedCount = cur + 1;
-      await updateDoc(ref, { helpfulCount: updatedCount });
-    }
-  } catch {
-    // fallback
-  }
-
-  const list = getLocal<KnowledgeArticle[]>(
-    LOCAL_STORAGE_KEYS.KNOWLEDGE_BASE,
-    SEED_KNOWLEDGE_ARTICLES
-  );
-  const idx = list.findIndex((a) => a.id === id);
-  if (idx !== -1) {
-    list[idx].helpfulCount = (list[idx].helpfulCount || 0) + 1;
-    updatedCount = list[idx].helpfulCount;
-    setLocal(LOCAL_STORAGE_KEYS.KNOWLEDGE_BASE, list);
-  }
-  return updatedCount;
-}
-
-export async function createKnowledgeArticle(article: KnowledgeArticle): Promise<void> {
-  try {
-    await setDoc(doc(db, 'knowledge_base', article.id), article);
-  } catch {
-    // fallback
-  }
-  const list = getLocal<KnowledgeArticle[]>(
-    LOCAL_STORAGE_KEYS.KNOWLEDGE_BASE,
-    SEED_KNOWLEDGE_ARTICLES
-  );
-  list.unshift(article);
-  setLocal(LOCAL_STORAGE_KEYS.KNOWLEDGE_BASE, list);
-}
-
-export async function updateKnowledgeArticle(
-  id: string,
-  updates: Partial<KnowledgeArticle>
-): Promise<void> {
-  try {
-    await updateDoc(doc(db, 'knowledge_base', id), updates);
-  } catch {
-    // fallback
-  }
-  const list = getLocal<KnowledgeArticle[]>(
-    LOCAL_STORAGE_KEYS.KNOWLEDGE_BASE,
-    SEED_KNOWLEDGE_ARTICLES
-  );
-  const idx = list.findIndex((a) => a.id === id);
-  if (idx !== -1) {
-    list[idx] = { ...list[idx], ...updates };
-    setLocal(LOCAL_STORAGE_KEYS.KNOWLEDGE_BASE, list);
-  }
-}
-
-export async function deleteKnowledgeArticle(id: string): Promise<void> {
-  try {
-    await deleteDoc(doc(db, 'knowledge_base', id));
-  } catch {
-    // fallback
-  }
-  const list = getLocal<KnowledgeArticle[]>(
-    LOCAL_STORAGE_KEYS.KNOWLEDGE_BASE,
-    SEED_KNOWLEDGE_ARTICLES
-  );
-  setLocal(
-    LOCAL_STORAGE_KEYS.KNOWLEDGE_BASE,
-    list.filter((a) => a.id !== id)
-  );
-}
-
